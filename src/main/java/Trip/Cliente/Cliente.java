@@ -5,4 +5,5 @@ public class Cliente {
 	private String Name;
 	private String UserName;
 	private String Senha;
+	private String Usuario;
 }
