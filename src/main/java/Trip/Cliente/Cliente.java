@@ -12,6 +12,7 @@ public class Cliente {
 	private Integer Id;
 	private String Name;
 	private String Senha;
+	private String Usuario;
 	private String Email;
 	private String Documento;
 	private Date DataNascimento;
