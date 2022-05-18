@@ -2,14 +2,14 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/inscrever.css" />
-    <link rel="icon" href="./imgs/icons/avatar.png">
+<%@ page contentType="text/html; charset=UTF-8"%>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="./css/inscrever.css" />
+<link rel="icon" href="./imgs/icons/avatar.png">
 
-    <title>Cadastro</title>
+<title>Cadastro</title>	
 </head>
 
 <body>
@@ -18,9 +18,9 @@
             <div class="box">
                 <span></span>
                 <div class="content">
-                    <h2>Ei, Conta pra gente um pouco sobre você!</h2>
+                  <h2>Ei, Conta pra gente um pouco sobre você!</h2>
                 </div>
-            </div>
+              </div>
         </div>
         <div class="form">
             <form action="#">
@@ -33,14 +33,10 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Primeiro Nome</label>
-                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome"
-                            required>
+                        <input id="name" type="text" name="name" placeholder="Digite seu primeiro nome" required>
                     </div>
 
-                    <div class="input-box">
-                        <label for="lastname">Sobrenome</label>
-                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
-                    </div>
+                    
                     <div class="input-box">
                         <label for="email">E-mail</label>
                         <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
@@ -58,19 +54,21 @@
 
                     <div class="input-box">
                         <label for="confirmPassword">CPF</label>
-                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite seu CPF"
-                            required>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite seu CPF" required>
                     </div>
 
                     <div class="input-box">
                         <label for="number">Login</label>
                         <input id="number" type="tel" name="number" placeholder="Digite seu user" required>
                     </div>
-
+                    
                     <div class="input-box">
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
+
+
+                    
 
                 </div>
 
@@ -103,11 +101,10 @@
                 </div>
 
                 <div class="continue-button">
-                    <button><a href="./index.html">Continuar</a> </button>
+                    <button><a href="./Index.jsp">Continuar</a> </button>
                 </div>
             </form>
         </div>
     </div>
 </body>
-
 </html>
