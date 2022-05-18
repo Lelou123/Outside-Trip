@@ -3,31 +3,76 @@ package Trip.Passagem;
 import java.util.Date;
 
 public class Passagem {
-	private Assento Assento;
+	
+	private Integer Passageiros;
+	private String Poltrona;
+	private AssentoClasse Classe;
 	private Integer Reserva;
+	private String Origem;
+	private String Destino;
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem(Trip.Passagem.Assento assento, Integer reserva, Date dataPartida, Date dataRetorno) {
+	public Passagem(String poltrona, Trip.Passagem.AssentoClasse classe, Integer passageiros, Integer reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
-		Assento = assento;
+		Passageiros = passageiros;
+		Poltrona = poltrona;
+		Classe = classe;
 		Reserva = reserva;
+		Origem = origem;
+		Destino = destino;
 		DataPartida = dataPartida;
 		DataRetorno = dataRetorno;
 	}
 	
-	public Assento getAssento() {
-		return Assento;
+	
+	public Integer getPassageiros() {
+		return Passageiros;
 	}
-	public void setAssento(Assento assento) {
-		Assento = assento;
+
+	public void setPassageiros(Integer passageiros) {
+		Passageiros = passageiros;
 	}
+
+	public String getPoltrona() {
+		return Poltrona;
+	}
+
+	public void setPoltrona(String poltrona) {
+		Poltrona = poltrona;
+	}
+
+	public AssentoClasse getClasse() {
+		return Classe;
+	}
+
+	public void setClasse(AssentoClasse classe) {
+		Classe = classe;
+	}
+
 	public Integer getReserva() {
 		return Reserva;
 	}
 	public void setReserva(Integer reserva) {
 		Reserva = reserva;
 	}
+	
+	public String getOrigem() {
+		return Origem;
+	}
+
+	public void setOrigem(String origem) {
+		Origem = origem;
+	}
+
+	public String getDestino() {
+		return Destino;
+	}
+
+	public void setDestino(String destino) {
+		Destino = destino;
+	}
+
 	public Date getDataPartida() {
 		return DataPartida;
 	}
