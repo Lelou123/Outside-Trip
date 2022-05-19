@@ -14,7 +14,7 @@ public class DadosPassageiroDao {
 		 
 		Connection conexao = Conexao.conexao();
 		
-		String sql = "INSERT INTO Dados Passageiro(nome_completo,sexo,data_nascimento,documento,telefone) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone) VALUES(?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);

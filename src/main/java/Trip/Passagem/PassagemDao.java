@@ -13,7 +13,7 @@ public class PassagemDao {
 
 		Connection conexao = Conexao.conexao();
 
-		String sql = "INSERT INTO Passagens Aéreas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES(?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES(?,?,?,?,?,?,?,?)";
 
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);

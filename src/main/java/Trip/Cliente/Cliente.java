@@ -11,12 +11,12 @@ public class Cliente {
 	
 	private Integer Id;
 	private String NomeCompleto;
-	private String Senha;
-	private String Usuario;
-	private String Email;
-	private String Documento;
 	private Date DataNascimento;
+	private String Email;
 	private String Telefone;
+	private String Documento;
+	private String Usuario;
+	private String Senha;
 	
 	private MetodoPagamento MetodoP;
 	private Bagagem Bagagem;
@@ -26,18 +26,18 @@ public class Cliente {
 	
 	
 	
-	public Cliente(Integer id, String nomeCompleto, String senha, String usuario, String email, String documento,
-			Date dataNascimento, String telefone, MetodoPagamento metodoP, Trip.Bagagem.Bagagem bagagem,
+	public Cliente(Integer id, String nomeCompleto, Date dataNascimento,  String email, String telefone, String documento, String usuario, String senha, 
+			  MetodoPagamento metodoP, Trip.Bagagem.Bagagem bagagem,
 			Trip.Hotel.Hotel hotel, Trip.Passagem.Passagem passagem) {
 		super();
 		Id = id;
 		NomeCompleto = nomeCompleto;
-		Senha = senha;
-		Usuario = usuario;
-		Email = email;
-		Documento = documento;
 		DataNascimento = dataNascimento;
+		Email = email;
 		Telefone = telefone;
+		Documento = documento;
+		Usuario = usuario;
+		Senha = senha;
 		MetodoP = metodoP;
 		Bagagem = bagagem;
 		Hotel = hotel;

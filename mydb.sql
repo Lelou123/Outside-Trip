@@ -18,69 +18,52 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`Reserva Hotel`
+-- Table `mydb`.`Reserva_Hotel`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Reserva Hotel` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Reserva_Hotel` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `primeiro_nome` VARCHAR(45) NOT NULL,
-  `ultimo_sobrenome` VARCHAR(45) NOT NULL,
+  `nome_completo` VARCHAR(45) NOT NULL,
   `data_nascimento` DATE NOT NULL,
   `sexo` VARCHAR(15) NOT NULL,
-  `email` VARCHAR(110) NOT NULL,
-  `celular` VARCHAR(15) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
-  `cpf` VARCHAR(15) NOT NULL,
+  `documento` VARCHAR(15) NOT NULL,
+  `reserva` VARCHAR(15) NOT NULL,
+  `quarto` VARCHAR(15) NOT NULL,
+  `data_chekin` DATE NOT NULL,
+  `data_checkout` DATE NOT NULL,
   PRIMARY KEY (`id`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`dados do passageiro`
+-- Table `mydb`.`Dados_Passageiro`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`dados do passageiro` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Dados_Passageiro` (
   `iddados` INT NOT NULL AUTO_INCREMENT,
-  `tipo_de_pessoa` VARCHAR(45) NOT NULL,
-  `nome` VARCHAR(45) NOT NULL,
-  `sobrenome` VARCHAR(45) NOT NULL,
+  `nome_completo` VARCHAR(45) NOT NULL,
   `sexo` VARCHAR(15) NOT NULL,
-  `data_de_nasc` DATE NOT NULL,
-  `nacionalidade` VARCHAR(30) NOT NULL,
-  `cpf` VARCHAR(15) NOT NULL,
+  `data_nascimento` DATE NOT NULL,
+  `documento` VARCHAR(15) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
-  `celular` VARCHAR(15) NOT NULL,
   PRIMARY KEY (`iddados`))
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `mydb`.`Passagens aéreas`
+-- Table `mydb`.`Passagens_Aereas`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Passagens aéreas` (
+CREATE TABLE IF NOT EXISTS `mydb`.`Passagens_Aereas` (
   `idPassagens` INT NOT NULL AUTO_INCREMENT,
-  `local_de_partida` VARCHAR(45) NOT NULL,
-  `local_de_ida` VARCHAR(45) NOT NULL,
-  `dia_de_ida` DATE NOT NULL,
-  `dia_de_volta` DATE NOT NULL,
-  `passageiros` INT(30) NOT NULL,
+  `passageiros` VARCHAR(15) NOT NULL,
+  `poltrona` VARCHAR(15) NOT NULL,
+  `classe` VARCHAR(15) NOT NULL,
+  `reserva` VARCHAR(15) NOT NULL,
+  `origem` VARCHAR(45) NOT NULL,
+  `destino` VARCHAR(45) NOT NULL,
+  `data_partida` DATE NOT NULL,
+  `data_retorno` DATE NOT NULL,
   PRIMARY KEY (`idPassagens`))
 ENGINE = InnoDB;
-
-
--- -----------------------------------------------------
--- Table `mydb`.`Endereço`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`Endereço` (
-  `idEndereço` INT NOT NULL AUTO_INCREMENT,
-  `rua` VARCHAR(110) NOT NULL,
-  `bairro` VARCHAR(45) NOT NULL,
-  `numero` VARCHAR(8) NOT NULL,
-  `cep` VARCHAR(8) NOT NULL,
-  `estado` VARCHAR(45) NOT NULL,
-  `cidade` VARCHAR(45) NOT NULL,
-  `sigla_UF` CHAR(2) NOT NULL,
-  PRIMARY KEY (`idEndereço`))
-ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `mydb`.`Cliente`
@@ -88,23 +71,20 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nome_completo` VARCHAR(45) NOT NULL,
-  `data_nasc` DATE NOT NULL,
+  `data_nascimento` DATE NOT NULL,
   `email` VARCHAR(110) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
-  `cpf` VARCHAR(15) NOT NULL,
-  `login` VARCHAR(110) NOT NULL,
+  `documento` VARCHAR(15) NOT NULL,
+  `usuario` VARCHAR(110) NOT NULL,
   `senha` VARCHAR(110) NOT NULL,
-  `confirmação_senha` VARCHAR(110) NOT NULL,
   `Reserva Hotel_id` INT NOT NULL,
   `dados do passageiro_iddados` INT NOT NULL,
   `Passagens aéreas_idPassagens` INT NOT NULL,
-  `Endereço_idEndereço` INT NOT NULL,
   `Cliente_idCliente` INT NOT NULL,
   PRIMARY KEY (`idCliente`),
   INDEX `fk_Cliente_Reserva Hotel1_idx` (`Reserva Hotel_id` ASC) VISIBLE,
   INDEX `fk_Cliente_dados do passageiro1_idx` (`dados do passageiro_iddados` ASC) VISIBLE,
   INDEX `fk_Cliente_Passagens aéreas1_idx` (`Passagens aéreas_idPassagens` ASC) VISIBLE,
-  INDEX `fk_Cliente_Endereço1_idx` (`Endereço_idEndereço` ASC) VISIBLE,
   INDEX `fk_Cliente_Cliente1_idx` (`Cliente_idCliente` ASC) VISIBLE,
   CONSTRAINT `fk_Cliente_Reserva Hotel1`
     FOREIGN KEY (`Reserva Hotel_id`)
@@ -121,11 +101,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
     REFERENCES `mydb`.`Passagens aéreas` (`idPassagens`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Cliente_Endereço1`
-    FOREIGN KEY (`Endereço_idEndereço`)
-    REFERENCES `mydb`.`Endereço` (`idEndereço`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_Cliente_Cliente1`
     FOREIGN KEY (`Cliente_idCliente`)
     REFERENCES `mydb`.`Cliente` (`idCliente`)
@@ -133,6 +108,30 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Cliente` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+/* INSERIR */
+INSERT INTO Cliente(nome_completo,data_nascimento,email,telefone,documento,usuario,senha) VALUES(?,?,?,?,?,?,?);
+INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone) VALUES(?,?,?,?,?);
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES(?,?,?,?,?,?,?,?);
+INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,dataCheckin,dataCheckout) VALUES(?,?,?,?,?,?,?,?,?);
+
+/* CONSULTA */
+SELECT * FROM Cliente;
+SELECT * FROM Passagens_Aereas;
+SELECT * FROM Dados_Passageiros;
+SELECT * FROM Reserva_Hotel;
+SELECT * FROM Cliente,Passagens_Aereas,Dados_Passageiro,Reserva_Hotel;
+
+/* ATUALIZAR */
+UPDATE Cliente SET nome_completo='??????';
+UPDATE Passagens_Aereas SET destino='?????';
+UPDATE Dados_Passageiro SET documento='??????';
+UPDATE Reserva_Hotel SET data_checkin='?????';
+
+/* DELETAR */
+DELETE FROM Cliente WHERE nome_completo='??????';
+DELETE FROM Passagens_Aereas WHERE idPassagens='?????';
+DELETE FROM Dados_Passageiro WHERE nome_completo='?????';
+DELETE FROM Reserva_Hotel WHERE documento='?????';
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

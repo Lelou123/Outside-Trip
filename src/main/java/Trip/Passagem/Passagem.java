@@ -13,7 +13,7 @@ public class Passagem {
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem(String poltrona, Trip.Passagem.AssentoClasse classe, Integer passageiros, Integer reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+	public Passagem(Integer passageiros, String poltrona, Trip.Passagem.AssentoClasse classe, Integer reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
 		Passageiros = passageiros;
 		Poltrona = poltrona;
