@@ -45,6 +45,20 @@ public class Cliente {
 	}
 	
 	
+	public Cliente(String nomeCompleto, String senha, String usuario, String email, String documento,
+			Date dataNascimento, String telefone) {
+		super();
+		
+		NomeCompleto = nomeCompleto;
+		Senha = senha;
+		Usuario = usuario;
+		Email = email;
+		Documento = documento;
+		DataNascimento = dataNascimento;
+		Telefone = telefone;
+		
+	}
+	
 	public Integer getId() {
 		return Id;
 	}
