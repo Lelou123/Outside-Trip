@@ -88,17 +88,32 @@
 		</nav>
 		<form>
 			<section class="Selecionar">
-				<div>
-					<label class="origem" for="text">Origem:</label> <label
-						class="destino" for="text">Destino:</label> <label class="dataID"
-						for="data">Data de ida:</label> <label class="dataID" for="data">Data
-						de volta:</label>
+
+				<div class="OD">
+					<label class="origem" for="text">Origem:</label>
+					<label class="destino" for="text">Destino:</label>
 				</div>
-				<input type="text" placeholder="De onde vai Sair?" name="nome"
-					required> <input type="text"
-					placeholder="Para onde você vai?"> <input type="date"
-					id="data" name="dataIda"> <input type="date" id="data"
-					name="dataVolt"> <select name="format" id="format">
+
+				<div class="ODDD">
+					<label class="origem" for="text">Origem:</label>
+					<label class="destino" for="text">Destino:</label>
+					<label class="dataID" for="data">Data de ida:</label>
+					<label class="dataID" for="data">Data de volta:</label>
+        </div>
+
+        <input  type="text" placeholder="De onde vai Sair?" name="nome" required>
+        <input  type="text"  placeholder="Para onde você vai?">
+          
+        <div class="DD">
+          <label class="dataID" for="data">Data de ida:</label>
+          <label class="dataID" for="data">Data de volta:</label>
+        </div>
+
+
+        <input type="date" id="data" name="dataIda">
+        <input type="date" id="data" name="dataVolt">
+
+        <select name="format" id="format">
 					<option value="pessoa">1 Passageiro</option>
 					<option value="pessoa">2 Passageiros</option>
 					<option value="pessoa">3 Passageiros</option>
@@ -108,7 +123,9 @@
 					<option value="pessoa">7 Passageiros</option>
 					<option value="pessoa">8 Passageiros</option>
 					<option value="pessoa">9 Passageiros</option>
-				</select> <select name="format" id="format">
+				</select>
+
+        <select name="format" id="format">
 					<option value="pessoa">0 Crianças</option>
 					<option value="pessoa">1 Criança</option>
 					<option value="pessoa">2 Crianças</option>
@@ -120,12 +137,11 @@
 					<option value="pessoa">8 Crianças</option>
 					<option value="pessoa">9 Crianças</option>
 				</select>
+
 				<button class="neons">Buscar voos</button>
 
 				<h2 class="Slogan">Relaxe … Você está com a gente!</h2>
 				<h2 class="Slogan2">Nós simplificamos</h2>
-
-
 
 			</section>
 		</form>
@@ -138,8 +154,7 @@
 
 
 	<div class="passagens-splide">
-		<h2 class="chamadopsg" id="passagem">Ofertas imperdíveis de voos
-			internacionais</h2>
+		<h2 class="chamadopsg" id="passagem">Passagens de voos internacionais para lugares incríveis</h2>
 		<div class="splide">
 			<div class="splide__track">
 				<ul class="splide__list">
@@ -521,7 +536,7 @@
 							forma, mantendo-a em uma posição mais confortável. Como também
 							ganha Fone de Ouvido, Cobertor Manta e Necessaire.</p>
 						<button class="bt-maisif">
-							<a href="#">mais infomaçoes</a>
+							<a href="./MaisInformações.jsp">mais infomaçoes</a>
 						</button>
 					</div>
 		</section>
@@ -533,7 +548,7 @@
 
 
 	<footer>
-		<div style="width: 26%;">
+		<div class="top-footer">
 			<h4>Formas de pagamento</h4>
 			<img
 				src="https://www.cvc.com.br/imageproc/image/upload/v1/global/logos/cards/visa.svg"
@@ -588,26 +603,5 @@
 </body>
 
 <script src="./js/script.js"></script>
-
-<!--ANIMAÇÃO PASSAGENS -------->
-<script>
-	var splide = new Splide('.splide', {
-		type : 'loop',
-		perPage : 3,
-		autoplay : true,
-	});
-
-	splide.mount();
-</script>
-
-<!--ANIMAÇÃO BOTÃO UP -------->
-<script>
-	function scrolltop() {
-		window.scrollTo({
-			top : 0,
-			behavior : 'smooth'
-		})
-	}
-</script>
 
 </html>

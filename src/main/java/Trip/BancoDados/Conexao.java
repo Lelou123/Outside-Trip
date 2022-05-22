@@ -13,7 +13,7 @@ public class Conexao {
 		Connection con = null;
 		
 		try {
-			con =  DriverManager.getConnection("jdbc:mysql://localhost/mydb","root","01031994");
+			con =  DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb","root","01031994");
 			System.out.println("Conexão com o Banco de Dados feita com Sucesso");
 			
 		} catch (SQLException e) {

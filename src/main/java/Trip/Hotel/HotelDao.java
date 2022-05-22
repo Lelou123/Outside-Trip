@@ -13,13 +13,13 @@ public class HotelDao {
 		
 	Connection conexao = Conexao.conexao();
 	
-	String sql = "INSERT INTO Reserva Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,dataCheckin,dataCheckout) VALUES(?,?,?,?,?,?,?,?,?)";
+	String sql = "INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,dataCheckin,dataCheckout) VALUES(?,?,?,?,?,?,?,?,?)";
 	
 	try {
 		PreparedStatement preparador = conexao.prepareStatement(sql);
 		preparador.setString(1, hotel.getNomeCompleto());
 		preparador.setDate(2, new Date(hotel.getDataNascimento().getTime()));
-		preparador.setNCharacterStream(3, hotel.getSexo());
+		preparador.setCharacter(3, hotel.getSexo());
 		preparador.setString(4, hotel.getTelefone());
 		preparador.setString(5, hotel.getDocumento());
 		preparador.setInt(6, hotel.getReserva());

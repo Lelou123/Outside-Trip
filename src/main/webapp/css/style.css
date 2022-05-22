@@ -167,7 +167,6 @@
 	
 }
 	select{
-
 	border: var(--clr-neon) 2px solid;
 	background:  rgba(255, 255, 255, 0.6);
 	outline: none;
@@ -260,7 +259,7 @@
 		color: #999;
 		font-size: 58px;
 		width: 40%;
-
+		text-align: center;
 		}
 
 	
@@ -865,7 +864,8 @@ footer div.social-media{
 
 
    .menu-mobile{
-		  display: none;
+		display: none;
+		visibility: hidden;
 		 
 	}
 
@@ -876,15 +876,62 @@ footer div.social-media{
 		display:none;
 	}
 	
+	.top-footer{
+		width: 26%;
+	}
 	
+	.OD{
+		display: none;
+	}
+
+	.DD{
+		display: none;
+	}
 
 
-
-   
 /* responsivo celular */
 
 
 @media screen and (max-width: 700px) {
+
+	select{
+		width: 47%;
+	}
+	.OD{
+		display: unset;
+		padding: 0 15px;
+
+	}
+	.DD{
+		display: flex;
+	}
+
+
+   .ODDD{
+	   display: none;
+   }
+
+	.top-footer{
+		width: 100%;
+		text-align: center;
+		margin: 20px 0;
+	}
+
+	footer h4 {
+		text-align: center;
+	}
+
+	#CopyrightFooter {
+
+		order: 3;
+	}
+	 footer{
+
+		flex-direction: column;
+	}
+	.button-scroll {
+		padding: 1em 2em;
+	}
 
 	.menu-mobile li{
 		list-style-type: none;
@@ -902,14 +949,14 @@ footer div.social-media{
     	padding: 5px 20px;
 	   }
 	   .menu-mobile{
-		visibility: unset;
-		width: 200px;
 		right: 0;
 		position: absolute;
 		background: rgba(0, 0, 0, 0.775);
 		height: 100vh;
-		display: block;
 		z-index: 2;
+		transition: all 0.5s ease;
+		width: 0;
+		display: unset;
        }
 	   
 	   .aside-menu{
@@ -978,7 +1025,7 @@ font-size: 30px;
 
 
 .slogan-cards{
-	font-size: 20px;
+	font-size: 16px;
 }
 .brand{
 	margin: 10px;

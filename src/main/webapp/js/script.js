@@ -4,12 +4,30 @@ const Abrirmenu = document.querySelector('.aside-menu')
 Abrirmenu.addEventListener('click', function () {
   filtrarMobile.style.visibility = 'visible';
   filtrarMobile.style.width = '90%';
-
-
 });
 fecharMenu.addEventListener('click', function () {
   filtrarMobile.style.visibility = 'hidden';
   filtrarMobile.style.width = '0';
-
-
 });
+
+
+// ANIMAÇÃO PASSAGENS 
+
+var splide = new Splide( '.splide', {
+  type    : 'loop',
+  perPage : 3,
+  autoplay: true,
+   } );
+
+  splide.mount();
+
+
+  //ANIMAÇÃO BOTÃO UP 
+
+  function scrolltop(){
+  window.scrollTo({
+  top:0,
+  behavior: 'smooth'
+  })
+   }
+   

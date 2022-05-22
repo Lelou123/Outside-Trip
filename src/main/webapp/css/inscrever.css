@@ -17,7 +17,6 @@ body {
 }
 
 .container {
-    
     width: 80%;
     height: 90vh;
     display: flex;
@@ -257,7 +256,7 @@ body {
    
    .box:before,
    .box:after {
-    background: linear-gradient(315deg, #ff00d9, #7b00ff)
+    background: linear-gradient(315deg, #f7c584, #ff9650)
    }
    
    .box span {
