@@ -11,7 +11,8 @@ fecharMenu.addEventListener('click', function () {
 });
 
 
-// ANIMAÇÃO PASSAGENS 
+             // ANIMAÇÃO PASSAGENS 
+
 
 var splide = new Splide( '.splide', {
   type    : 'loop',
@@ -22,7 +23,8 @@ var splide = new Splide( '.splide', {
   splide.mount();
 
 
-  //ANIMAÇÃO BOTÃO UP 
+           //ANIMAÇÃO BOTÃO UP 
+
 
   function scrolltop(){
   window.scrollTo({
@@ -30,4 +32,13 @@ var splide = new Splide( '.splide', {
   behavior: 'smooth'
   })
    }
+
+
+   VanillaTilt.init(document.querySelectorAll(".cardi"), {
+     max: 25,
+     speed: 400,
+     glare: true,
+     "max-glare": 1,
+   });
+
    

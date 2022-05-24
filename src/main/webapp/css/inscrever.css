@@ -38,7 +38,8 @@ body {
     width: 31rem;
 }
 
-.form {    
+.form {
+    
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -207,8 +208,6 @@ body {
         margin-top: 0.5rem;
     }
 }
-
-
 .box {
    
     position: relative;
