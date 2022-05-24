@@ -17,10 +17,10 @@ public class PassagemDao {
 
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
-			preparador.setInt(1, passagem.getPassageiros());
+			preparador.setString(1, passagem.getPassageiros());
 			preparador.setString(2, passagem.getPoltrona());
-			preparador.setAssentoClasse(3, passagem.getClasse());
-			preparador.setInt(4, passagem.getReserva());
+			preparador.setObject(3, passagem.getClasse().getClass());
+			preparador.setString(4, passagem.getReserva());
 			preparador.setString(5, passagem.getOrigem());
 			preparador.setString(6, passagem.getDestino());
 			preparador.setDate(7, new Date(passagem.getDataPartida().getTime()));
@@ -33,4 +33,8 @@ public class PassagemDao {
 			e.printStackTrace();
 		}
 	}
-}
+
+	
+		
+	}
+

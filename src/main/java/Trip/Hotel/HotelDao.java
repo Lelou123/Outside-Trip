@@ -13,19 +13,19 @@ public class HotelDao {
 		
 	Connection conexao = Conexao.conexao();
 	
-	String sql = "INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,dataCheckin,dataCheckout) VALUES(?,?,?,?,?,?,?,?,?)";
+	String sql = "INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,data_chekin,data_checkout) VALUES(?,?,?,?,?,?,?,?,?)";
 	
 	try {
 		PreparedStatement preparador = conexao.prepareStatement(sql);
 		preparador.setString(1, hotel.getNomeCompleto());
 		preparador.setDate(2, new Date(hotel.getDataNascimento().getTime()));
-		preparador.setCharacter(3, hotel.getSexo());
+		preparador.setString(3, hotel.getSexo());
 		preparador.setString(4, hotel.getTelefone());
 		preparador.setString(5, hotel.getDocumento());
-		preparador.setInt(6, hotel.getReserva());
-		preparador.setInt(7, hotel.getQuarto());
-		preparador.setDate(8, new Date(hotel.getDataCheckin().getTime()));
-		preparador.setDate(8, new Date(hotel.getDataCheckout().getTime()));
+		preparador.setString(6, hotel.getReserva());
+		preparador.setString(7, hotel.getQuarto());
+		preparador.setDate(8, new Date(hotel.getDataChekin().getTime()));
+		preparador.setDate(9, new Date(hotel.getDataCheckout().getTime()));
 
 		preparador.execute();
 		System.out.println("Reserva feita com Sucesso!!!!");

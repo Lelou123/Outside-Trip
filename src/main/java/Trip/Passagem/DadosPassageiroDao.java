@@ -11,19 +11,20 @@ public class DadosPassageiroDao {
 
 	
 	public void dadosPassageiro(DadosPassageiro dadosPassageiro) {
-		 
+		
+		
 		Connection conexao = Conexao.conexao();
 		
-		String sql = "INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone) VALUES(?,?,?,?,?)";
+		String sql = "INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES(?,?,?,?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			preparador.setString(1, dadosPassageiro.getNomeCompleto());
-			preparador.setCharacter(2, dadosPassageiro.getSexo());
+			preparador.setString(2, dadosPassageiro.getSexo());
 			preparador.setDate(3, new Date(dadosPassageiro.getDataNascimento().getTime()));
 			preparador.setString(4, dadosPassageiro.getDocumento());
 			preparador.setString(5, dadosPassageiro.getTelefone());
-		
+			
 		
 
 			preparador.execute();
@@ -35,3 +36,4 @@ public class DadosPassageiroDao {
 		}
 	}
 }
+

@@ -9,7 +9,7 @@ import Trip.Passagem.Passagem;
 
 public class Cliente {
 	
-	private Integer Id;
+	private Integer IdCliente;
 	private String NomeCompleto;
 	private Date DataNascimento;
 	private String Email;
@@ -26,11 +26,11 @@ public class Cliente {
 	
 	
 	
-	public Cliente(Integer id, String nomeCompleto, Date dataNascimento,  String email, String telefone, String documento, String usuario, String senha, 
+	public Cliente(Integer idCliente, String nomeCompleto, Date dataNascimento,  String email, String telefone, String documento, String usuario, String senha, 
 			  MetodoPagamento metodoP, Trip.Bagagem.Bagagem bagagem,
 			Trip.Hotel.Hotel hotel, Trip.Passagem.Passagem passagem) {
 		super();
-		Id = id;
+		IdCliente = idCliente;
 		NomeCompleto = nomeCompleto;
 		DataNascimento = dataNascimento;
 		Email = email;
@@ -45,11 +45,11 @@ public class Cliente {
 	}
 	
 	
-	public Integer getId() {
-		return Id;
+	public Integer getIdCliente() {
+		return IdCliente;
 	}
-	public void setId(Integer id) {
-		Id = id;
+	public Cliente(Integer idCliente) {
+		IdCliente = idCliente;
 	}
 	public String getNomeCompleto() {
 		return NomeCompleto;

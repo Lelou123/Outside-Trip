@@ -4,17 +4,18 @@ import java.util.Date;
 
 public class Passagem {
 	
-	private Integer Passageiros;
+	private String Passageiros;
 	private String Poltrona;
 	private AssentoClasse Classe;
-	private Integer Reserva;
+	private String Reserva;
 	private String Origem;
 	private String Destino;
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem(Integer passageiros, String poltrona, Trip.Passagem.AssentoClasse classe, Integer reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+	public Passagem( String passageiros, String poltrona, AssentoClasse classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
+	
 		Passageiros = passageiros;
 		Poltrona = poltrona;
 		Classe = classe;
@@ -25,12 +26,12 @@ public class Passagem {
 		DataRetorno = dataRetorno;
 	}
 	
-	
-	public Integer getPassageiros() {
+
+	public String getPassageiros() {
 		return Passageiros;
 	}
 
-	public void setPassageiros(Integer passageiros) {
+	public void setPassageiros(String passageiros) {
 		Passageiros = passageiros;
 	}
 
@@ -50,10 +51,10 @@ public class Passagem {
 		Classe = classe;
 	}
 
-	public Integer getReserva() {
+	public String getReserva() {
 		return Reserva;
 	}
-	public void setReserva(Integer reserva) {
+	public void setReserva(String reserva) {
 		Reserva = reserva;
 	}
 	

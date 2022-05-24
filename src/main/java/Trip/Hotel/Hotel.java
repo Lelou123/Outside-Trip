@@ -3,18 +3,20 @@ package Trip.Hotel;
 import java.util.Date;
 
 public class Hotel {
+	
+
 	private String NomeCompleto;
 	private Date DataNascimento;
-	private Character Sexo;
+	private String Sexo;
 	private String Telefone;
 	private String Documento;
-	private Integer Reserva;
-	private Integer Quarto;
-	private Date DataCheckin;
+	private String Reserva;
+	private String Quarto;
+	private Date DataChekin;
 	private Date DataCheckout;
 	
 	
-	public Hotel(String nomeCompleto, Date dataNascimento, Character sexo, String telefone, String documento, Integer reserva, Integer quarto, Date dataCheckin, Date dataCheckout) {
+	public Hotel(String nomeCompleto, Date dataNascimento, String sexo, String telefone, String documento, String reserva, String quarto, Date dataChekin, Date dataCheckout) {
 		super();
 		NomeCompleto = nomeCompleto;
 		DataNascimento = dataNascimento;
@@ -23,11 +25,12 @@ public class Hotel {
 		Documento = documento;
 		Reserva = reserva;
 		Quarto = quarto;
-		DataCheckin = dataCheckin;
+		DataChekin = dataChekin;
 		DataCheckout = dataCheckout;
 	}
 	
 	
+
 	public String getNomeCompleto() {
 		return NomeCompleto;
 	}
@@ -44,11 +47,11 @@ public class Hotel {
 		DataNascimento = dataNascimento;
 	}
 
-	public Character getSexo() {
+	public String getSexo() {
 		return Sexo;
 	}
 
-	public void setSexo(Character sexo) {
+	public void setSexo(String sexo) {
 		Sexo = sexo;
 	}
 
@@ -68,25 +71,25 @@ public class Hotel {
 		Documento = documento;
 	}
 
-	public Integer getReserva() {
+	public String getReserva() {
 		return Reserva;
 	}
-	public void setReserva(Integer reserva) {
+	public void setReserva(String reserva) {
 		Reserva = reserva;
 	}
-	public Integer getQuarto() {
+	public String getQuarto() {
 		return Quarto;
 	}
-	public void setQuarto(Integer quarto) {
+	public void setQuarto(String quarto) {
 		Quarto = quarto;
 	}
 	
-	public Date getDataCheckin() {
-		return DataCheckin;
+	public Date getDataChekin() {
+		return DataChekin;
 	}
 
-	public void setDataCheckin(Date dataCheckin) {
-		DataCheckin = dataCheckin;
+	public void setDataChekin(Date dataChekin) {
+		DataChekin = dataChekin;
 	}
 
 	public Date getDataCheckout() {

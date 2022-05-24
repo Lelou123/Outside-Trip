@@ -25,7 +25,7 @@ public class ClienteDao {
 			preparador.setString(5, cliente.getDocumento());
 			preparador.setString(6, cliente.getUsuario());
 			preparador.setString(7, cliente.getSenha());
-		
+
 
 			preparador.execute();
 			System.out.println("Cliente cadastrado com Sucesso!!!");

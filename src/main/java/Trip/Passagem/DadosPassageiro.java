@@ -4,13 +4,16 @@ import java.util.Date;
 
 public class DadosPassageiro {
 
+	private Ids IdDados;
 	private String NomeCompleto;
-	private Character Sexo;
+	private String Sexo;
 	private Date DataNascimento;
 	private String Documento;
 	private String Telefone;
 	
-	public DadosPassageiro(String nomeCompleto, Character sexo, String documento,Date dataNascimento, String telefone) {
+	
+	public DadosPassageiro(Ids idDados, String nomeCompleto, String sexo, Date dataNascimento, String documento,
+			String telefone, Integer idReserva, Integer idPassagem, Integer idCliente) {
 		super();
 		
 		NomeCompleto = nomeCompleto;
@@ -18,6 +21,16 @@ public class DadosPassageiro {
 		Documento = documento;
 		DataNascimento = dataNascimento;
 		Telefone = telefone;
+	
+	}
+
+	
+	public Ids getIdDados() {
+		return IdDados;
+	}
+
+	public void setIdDados(Ids idDados) {
+		IdDados = idDados;
 	}
 
 	public String getNomeCompleto() {
@@ -28,11 +41,11 @@ public class DadosPassageiro {
 		NomeCompleto = nomeCompleto;
 	}
 
-	public Character getSexo() {
+	public String getSexo() {
 		return Sexo;
 	}
 
-	public void setSexo(Character sexo) {
+	public void setSexo(String sexo) {
 		Sexo = sexo;
 	}
 
@@ -59,6 +72,6 @@ public class DadosPassageiro {
 	public void setTelefone(String telefone) {
 		Telefone = telefone;
 	}
-	
+
 	
 }
