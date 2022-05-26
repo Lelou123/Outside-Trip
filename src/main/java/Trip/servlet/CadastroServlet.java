@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import Trip.Cliente.Cliente;
+
 
 @WebServlet("/cadastro")
 public class CadastroServlet extends HttpServlet {
@@ -19,12 +21,18 @@ public class CadastroServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
-		String number = req.getParameter("number");
-		Date dataNascimento = converterParaDate(req.getParameter("txtdatanascimento")); 
-		String login = req.getParameter("txtlogin");
-		String senha = req.getParameter("txtsenha");
-				
-		resp.sendRedirect("mostrar");
+		String documento = req.getParameter("cpf");
+		Date dataNascimento = converterParaDate(req.getParameter("dataNasc")); 
+		String usuario = req.getParameter("usuario");
+		String telefone = req.getParameter("number");
+		String senha = req.getParameter("password");
+		
+		Cliente cl = new Cliente(name, senha,usuario,email,documento,dataNascimento,telefone);
+		
+		//resp.sendRedirect(""); adicionar o redirect
+		
+		//Banco.adiciona(usuario); INSERT INTO DB cliente aqui.
+		
 	}
 	
 	private Date converterParaDate(String dataString)

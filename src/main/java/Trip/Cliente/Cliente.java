@@ -41,12 +41,31 @@ public class Cliente {
 		MetodoP = metodoP;
 		Bagagem = bagagem;
 		Hotel = hotel;
-		Passagem = passagem;
+		Passagem = passagem;	
 	}
 	
 	
+<<<<<<< HEAD
 	public Integer getIdCliente() {
 		return IdCliente;
+=======
+	public Cliente(String nomeCompleto, String senha, String usuario, String email, String documento,
+			Date dataNascimento, String telefone) {
+		super();
+		
+		NomeCompleto = nomeCompleto;
+		Senha = senha;
+		Usuario = usuario;
+		Email = email;
+		Documento = documento;
+		DataNascimento = dataNascimento;
+		Telefone = telefone;
+		
+	}
+	
+	public Integer getId() {
+		return Id;
+>>>>>>> 0c431dc9e91fafea8c45ea70330cbd14f734221a
 	}
 	public Cliente(Integer idCliente) {
 		IdCliente = idCliente;

@@ -13,7 +13,7 @@ public class Inserir {
 			
 			System.out.println("Conecatado com a database com sucesso");
 			
-	PreparedStatement preparedStatement = conexao.prepareStatement("Inserir cliente com valores(?,?,?)");
+			PreparedStatement preparedStatement = conexao.prepareStatement("Inserir cliente com valores(?,?,?)");
 			
 			preparedStatement.setString(1, "?");
 			preparedStatement.setString(2, "???");
