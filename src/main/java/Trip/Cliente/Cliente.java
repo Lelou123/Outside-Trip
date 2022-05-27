@@ -45,10 +45,8 @@ public class Cliente {
 	}
 	
 	
-<<<<<<< HEAD
-	public Integer getIdCliente() {
-		return IdCliente;
-=======
+
+
 	public Cliente(String nomeCompleto, String senha, String usuario, String email, String documento,
 			Date dataNascimento, String telefone) {
 		super();
@@ -62,10 +60,11 @@ public class Cliente {
 		Telefone = telefone;
 		
 	}
-	
+	public Integer getIdCliente() {
+		return IdCliente;
+	}
 	public Integer getId() {
-		return Id;
->>>>>>> 0c431dc9e91fafea8c45ea70330cbd14f734221a
+		return IdCliente;
 	}
 	public Cliente(Integer idCliente) {
 		IdCliente = idCliente;
