@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import Trip.Cliente.Cliente;
 
-
 @WebServlet("/cadastro")
 public class CadastroServlet extends HttpServlet {
 	
+
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String name = req.getParameter("name");
