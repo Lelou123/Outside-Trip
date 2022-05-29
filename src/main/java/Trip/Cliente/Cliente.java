@@ -47,18 +47,18 @@ public class Cliente {
 	
 
 
-	public Cliente(String nomeCompleto, String senha, String usuario, String email, String documento,
-			Date dataNascimento, String telefone) {
+	public Cliente(String nomeCompleto, Date dataNascimento,String email, String telefone, String documento,  
+			String usuario, String senha
+			 ) {
 		super();
 		
 		NomeCompleto = nomeCompleto;
-		Senha = senha;
-		Usuario = usuario;
-		Email = email;
-		Documento = documento;
 		DataNascimento = dataNascimento;
-		Telefone = telefone;
-		
+		Email = email;
+		Telefone = telefone;		
+		Documento = documento;		
+		Usuario = usuario;
+		Senha = senha;
 	}
 	public Integer getIdCliente() {
 		return IdCliente;

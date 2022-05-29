@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import Trip.Cliente.Cliente;
+import Trip.Cliente.ClienteDao;
 
 @WebServlet("/cadastro")
 public class CadastroServlet extends HttpServlet {
@@ -26,12 +27,15 @@ public class CadastroServlet extends HttpServlet {
 		String usuario = req.getParameter("usuario");
 		String telefone = req.getParameter("number");
 		String senha = req.getParameter("password");
+		 
+		Cliente cl = new Cliente(name,dataNascimento, email, telefone, documento,usuario, senha);
+		ClienteDao cDao = new ClienteDao();
+		cDao.cadastrar(cl);
 		
-		Cliente cl = new Cliente(name, senha,usuario,email,documento,dataNascimento,telefone);
 		
-		//resp.sendRedirect(""); adicionar o redirect
+		resp.sendRedirect("Index.jsp"); 
 		
-		//Banco.adiciona(usuario); INSERT INTO DB cliente aqui.
+		
 		
 	}
 	

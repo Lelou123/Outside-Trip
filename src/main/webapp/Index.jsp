@@ -21,7 +21,7 @@
 
     <div class="menu-mobile">
       <div class="aside-fechar">
-        <h1 class="brand"><a href="index.jsp">Out<span>s</span>ide trip</a></h1>
+        <h1 class="brand"><a href="Index.jsp">Out<span>s</span>ide trip</a></h1>
         <button class="fechar-menu">✕</button>
       </div>
 
@@ -31,7 +31,7 @@
         <li><a href="#hotel">Hotéis</a></li>
         <li><a href="#passagem">Passagens</a></li>
         <li><a href="pagePagamento.jsp">carrinho</a></li>
-        <li><a onclick="window.location.href ='index.jsp#loginmodel'" class="login"> Login</a></li>
+        <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
       </ul>
 
     </div>
@@ -41,7 +41,7 @@
     <div class="container">
 
       <nav>
-        <h1 class="brand"><a href="index.jsp">Out<span>s</span>ide trip</a></h1>
+        <h1 class="brand"><a href="Index.jsp">Out<span>s</span>ide trip</a></h1>
         <button class="aside-menu">
           ☰
         </button>
@@ -51,7 +51,7 @@
           <li><a href="#hotel">Hotéis</a></li>
           <li><a href="#passagem">Passagens</a></li>
           <li><a href="pagePagamento.jsp">carrinho</a></li>
-          <li><a onclick="window.location.href ='index.jsp#loginmodel'" class="login"> Login</a></li>
+          <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
         </ul>
         <div id="loginmodel" class="loginmodel" style="z-index: 200;">
           <div class="popup">
@@ -62,7 +62,7 @@
                 <input class="form-v-001" id="senha_input" type="password" placeholder="senha">
 
                 <div class="bts-login">
-                  <button class="neons"><a href="./index.jsp">Login</a></button>
+                  <button class="neons"><a href="./Index.jsp">Login</a></button>
                   <button class="neons"><a href="./Inscrever-se.jsp">Inscrever-se</a></button>
                 </div>
               </section>
