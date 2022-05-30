@@ -33,6 +33,7 @@ public class ClienteDao {
 
 			preparador.execute();
 			System.out.println("Cliente cadastrado com Sucesso!!!");
+			conexao.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -54,6 +55,8 @@ public class ClienteDao {
 				cliente.setNomeCompleto("nome_completo");
 				cliente.setEmail("email");
 			}
+			
+			conexao.close();
 		} catch (Exception e) {
 
 			e.printStackTrace();

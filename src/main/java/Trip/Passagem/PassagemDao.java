@@ -3,12 +3,18 @@ package Trip.Passagem;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import Trip.BancoDados.Conexao;
 
 public class PassagemDao {
-
+	
+	private PreparedStatement preparador;
+	private ResultSet result;
+	
 	public void passagem(Passagem passagem) {
 
 		Connection conexao = Conexao.conexao();
@@ -28,11 +34,36 @@ public class PassagemDao {
 
 			preparador.execute();
 			System.out.println("Passagem Reservada com Sucesso");
+			conexao.close();
 
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
+	
+	public List<Passagem> getAllProducts(){
+		List<Passagem> passagem = new ArrayList<Passagem>();
+		String query = "SELECT * FROM Passagens_Aereas";
+		Connection conexao = Conexao.conexao();
+		try {
+			
+			preparador = conexao.prepareStatement(query);
+			result = preparador.executeQuery();
+			while(result.next()) {
+				Passagem row = new Passagem();
+				row.setIdPassagens(result.getInt("idPassagens"));
+				row.setIdPassagens(result.getInt("idPassagens"));
+				row.setIdPassagens(result.getInt("idPassagens"));
+				row.setIdPassagens(result.getInt("idPassagens"));
+				row.setIdPassagens(result.getInt("idPassagens"));
+			}
+			conexao.close();
+		} catch (Exception e) {
+			
+		}
+		return passagem;
+	}
+	
 
 	
 		

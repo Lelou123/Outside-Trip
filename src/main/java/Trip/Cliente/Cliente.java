@@ -60,6 +60,7 @@ public class Cliente {
 		Usuario = usuario;
 		Senha = senha;
 	}
+	
 	public Integer getIdCliente() {
 		return IdCliente;
 	}

@@ -4,6 +4,8 @@ import java.util.Date;
 
 public class Passagem {
 	
+	private Integer IdPassagens;
+	
 	private String Passageiros;
 	private String Poltrona;
 	private AssentoClasse Classe;
@@ -13,9 +15,9 @@ public class Passagem {
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem( String passageiros, String poltrona, AssentoClasse classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+	public Passagem(Integer idPassagens, String passageiros, String poltrona, AssentoClasse classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
-	
+		IdPassagens = idPassagens;
 		Passageiros = passageiros;
 		Poltrona = poltrona;
 		Classe = classe;
@@ -26,6 +28,18 @@ public class Passagem {
 		DataRetorno = dataRetorno;
 	}
 	
+
+	public Passagem() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Integer getIdPassagens() {
+		return IdPassagens;
+	}
+
+	public void setIdPassagens(Integer idPassagens) {
+		IdPassagens = idPassagens;
+	}
 
 	public String getPassageiros() {
 		return Passageiros;
