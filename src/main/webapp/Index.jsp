@@ -4,7 +4,13 @@
 <head>
 
 	<!-- <%@ page contentType="text/html; charset=UTF-8"%> -->
-
+	<%@page import="Trip.Cliente.*"%>
+	<%
+		Cliente auth = (Cliente) request.getSession().getAttribute("auth");
+		if(auth != null){
+			request.setAttribute("auth", auth);
+		}
+	%>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Outside Trip</title>
@@ -50,8 +56,19 @@
           <li><a href="#cdLegal">Cards</a></li>
           <li><a href="#hotel">Hotéis</a></li>
           <li><a href="#passagem">Passagens</a></li>
-          <li><a href="pagePagamento.jsp">carrinho</a></li>
-          <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
+          
+          
+          <%
+          
+          if(auth != null){%>
+        	  <li><a href="pagePagamento.jsp">carrinho</a></li>
+        	  <li><a href="logout"> Logout</a></li>
+          <%}else{%>
+        	  <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
+          <%}
+          %>
+          
+          
         </ul>
         <div id="loginmodel" class="loginmodel" style="z-index: 200;">
           <div class="popup">

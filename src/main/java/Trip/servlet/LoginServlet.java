@@ -29,15 +29,15 @@ public class LoginServlet extends HttpServlet {
 			ClienteDao cdao = new ClienteDao();
 			Cliente cliente = cdao.clientelogin(usuario, senha);
 			if (cliente != null) {
-				out.print("Loged");
+				req.getSession().setAttribute("auth", cliente);
+				resp.sendRedirect("Index.jsp");				
 			} else {
 				out.print("Not loged");
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		resp.sendRedirect("Index.jsp");
+			e.printStackTrace();
+		}		
 
 	}
 }
