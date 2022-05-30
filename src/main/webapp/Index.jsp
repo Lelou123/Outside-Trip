@@ -56,17 +56,19 @@
         <div id="loginmodel" class="loginmodel" style="z-index: 200;">
           <div class="popup">
             <h2>Entrar</h2>
-            <div class="content">
-              <section>
-                <input class="form-v-001" id="usuario_input" placeholder="Usuario">
-                <input class="form-v-001" id="senha_input" type="password" placeholder="senha">
-
-                <div class="bts-login">
-                  <button class="neons"><a href="./Index.jsp">Login</a></button>
-                  <button class="neons"><a href="./Inscrever-se.jsp">Inscrever-se</a></button>
-                </div>
-              </section>
-            </div>
+            <form action="login" method="post">
+	            <div class="content">
+	              <section>
+	                <input class="form-v-001" id="usuario_input" name="usuario-login" placeholder="Insira seu Usuario">
+	                <input class="form-v-001" id="senha_input" name="senha-login" type="password" placeholder="******">
+	
+	                <div class="bts-login">
+	                  <button type="submit" onclick="info()" class="neons"><a>Login</a></button>
+	                  <button class="neons"><a href="./Inscrever-se.jsp">Inscrever-se</a></button>
+	                </div>
+	              </section>
+	            </div>
+            </form>
             <a class="close" href="#">&times;</a>
           </div>
 
@@ -553,6 +555,11 @@
     </div>
   </footer>
 </body>
+<script>
+	function info(){
+		window.alert("Olhe no seu terminal!");
+	}
+</script>
 <script type="text/javascript" src="./js/vanilla-tilt.js"></script>
 <script src="./js/splide.min.js"></script>
 <script src="./js/script.js"></script>

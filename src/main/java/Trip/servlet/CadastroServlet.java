@@ -31,11 +31,8 @@ public class CadastroServlet extends HttpServlet {
 		Cliente cl = new Cliente(name,dataNascimento, email, telefone, documento,usuario, senha);
 		ClienteDao cDao = new ClienteDao();
 		cDao.cadastrar(cl);
-		
-		
+				
 		resp.sendRedirect("Index.jsp"); 
-		
-		
 		
 	}
 	

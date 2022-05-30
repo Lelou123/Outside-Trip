@@ -149,7 +149,7 @@ body {
     color: #000000c0;
 }
 
-.continue-button input {
+.continue-button button {
     width: 100%;
     margin-top: 2.5rem;
     border: none;

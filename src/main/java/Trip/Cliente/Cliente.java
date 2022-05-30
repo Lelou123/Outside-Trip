@@ -69,6 +69,13 @@ public class Cliente {
 	public Cliente(Integer idCliente) {
 		IdCliente = idCliente;
 	}
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
+
 	public String getNomeCompleto() {
 		return NomeCompleto;
 	}

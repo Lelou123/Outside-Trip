@@ -38,7 +38,7 @@
                 <div class="input-group">
                     <div class="input-box">
                         <label for="firstname">Nome Completo</label>
-                        <input id="firstname" type="text" name="name" placeholder="Digite seu primeiro nome"
+                        <input id="firstname" minlength="1" type="text" name="name" placeholder="Digite seu primeiro nome"
                             required>
                     </div>
 
@@ -50,7 +50,7 @@
 
                     <div class="input-box">
                         <label for="number">Celular</label>
-                        <input id="number" type="tel" name="number" placeholder="(xx) xxxx-xxxx" required>
+                        <input id="number" minlength="11" maxlength="11" type="text" name="number" placeholder="(xx) xxxx-xxxx" required>
                     </div>
 
                     <div class="input-box">
@@ -66,7 +66,7 @@
 
                     <div class="input-box">
                         <label for="number">Usuario</label>
-                        <input id="number" type="tel" name="usuario" placeholder="Digite seu user" required>
+                        <input id="number" minlength="3" maxlength="10" type="text" name="usuario" placeholder="Digite seu user" required>
                     </div>
 
                     <div class="input-box">
@@ -74,9 +74,9 @@
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
 
-
-                
-                    <input type="submit" onclick="info()" value="salvar">
+					<div class="continue-button">
+                    	<button class="type="submit" onclick="info()"><a>Continuar</a></button>
+                	</div>
                 
             </form>
         </div>
