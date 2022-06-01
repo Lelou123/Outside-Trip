@@ -22,11 +22,6 @@ USE `mydb` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `mydb`.`Reserva_Hotel` (
   `id` INT NOT NULL AUTO_INCREMENT,
-  `nome_completo` VARCHAR(45) NOT NULL,
-  `data_nascimento` DATE NOT NULL,
-  `sexo` VARCHAR(15) NOT NULL,
-  `telefone` VARCHAR(15) NOT NULL,
-  `documento` VARCHAR(15) NOT NULL,
   `reserva` VARCHAR(45) NOT NULL,
   `quarto` VARCHAR(15) NOT NULL,
   `data_checkin` DATE NOT NULL,
@@ -41,7 +36,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `mydb`.`Dados_Passageiro` (
   `iddados` INT NOT NULL AUTO_INCREMENT,
   `nome_completo` VARCHAR(45) NOT NULL,
-  `sexo` VARCHAR(15) NOT NULL,
   `data_nascimento` DATE NOT NULL,
   `documento` VARCHAR(15) NOT NULL,
   `telefone` VARCHAR(15) NOT NULL,
@@ -78,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Passagens_Aereas` (
   `passageiros` VARCHAR(15) NOT NULL,
   `poltrona` VARCHAR(15) NOT NULL,
   `classe` VARCHAR(15) NOT NULL,
-  `reserva` VARCHAR(15) NOT NULL,
   `origem` VARCHAR(45) NOT NULL,
   `destino` VARCHAR(45) NOT NULL,
   `data_partida` DATE NOT NULL,
@@ -115,37 +108,38 @@ INSERT INTO Cliente(nome_completo,data_nascimento,email,telefone,documento,usuar
 INSERT INTO Cliente(nome_completo,data_nascimento,email,telefone,documento,usuario,senha) VALUES('Guilherme Campbell Gonçalves','1998-12-06','guicampbell@gmail.com','11900220000','58932157899','guicampbell','gcg963');
 
 /* DADOS PASSAGEIROS */
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Vinicius Araujo de Oliveira','Masculino','2001-05-14','11900000000','00000000000','1','1','1');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Beatriz da Cruz Guedes','Feminino','2000-10-25','11958000000','2221106117','2','2','2');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Julia da Costa Santos','Feminino','2001-06-23','11900000023','2222102677','3','3','3');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Joana Darc Monteiro Silva','Feminino','2002-07-05','11900066000','2221107593','4','4','4');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Vitória Akemi Corrêa Arakaki','Feminino','2003-04-08','11902500000','422101990','5','5','5');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Murillo Julio Lins de Oliveira','Masculino','2003-04-08','11900003300','2221108639','6','6','6');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Beatriz Rodrigues de Paula','Feminino','2002-05-21','11900140000','3032105741','7','7','7');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Rafaela Luz','Feminino','2003-08-11','11900009900','2222103972','8','8','8');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Valéria Conceição','Feminino','2000-11-03','11901100000','422107399','9','9','9');
-INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Guilherme Campbell Gonçalves','Masculino','1998-12-06','11900220000','58932157899','10','10','10');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Vinicius Araujo de Oliveira','2001-05-14','11900000000','00000000000','1','1','1');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Beatriz da Cruz Guedes','2000-10-25','11958000000','2221106117','2','2','2');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Julia da Costa Santos','2001-06-23','11900000023','2222102677','3','3','3');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Joana Darc Monteiro Silva','2002-07-05','11900066000','2221107593','4','4','4');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Vitória Akemi Corrêa Arakaki','2003-04-08','11902500000','422101990','5','5','5');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Murillo Julio Lins de Oliveira','2003-04-08','11900003300','2221108639','6','6','6');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Beatriz Rodrigues de Paula','2002-05-21','11900140000','3032105741','7','7','7');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Rafaela Luz','2003-08-11','11900009900','2222103972','8','8','8');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Valéria Conceição','2000-11-03','11901100000','422107399','9','9','9');
+INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES('Guilherme Campbell Gonçalves','1998-12-06','11900220000','58932157899','10','10','10');
 
 /* PASSAGENS AEREAS */
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','1','São Paulo - Brasil','Nova York - EUA','2022-07-17','2022-07-27');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','21PC','Primeira Classe','1','São Paulo - Brasil','Paris - França','2022-08-01','2022-08-10');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','36PC','Primeira Classe','1','São Paulo - Brasil','Amsterdã - Holanda','2022-09-20','2022-09-27');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','14PC','Primeira Classe','1','São Paulo - Brasil','Ottawa - Canadá','2022-06-10','2022-06-20');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','1','São Paulo - Brasil','Dubai - Emirados Arábes Unidos','2022-10-18','2022-10-28');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,reserva,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','1','São Paulo - Brasil','Tokyo - Japão','2022-11-15','2022-11-25');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','São Paulo - Brasil','Nova York - EUA','2022-07-17','2022-07-27');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','21PC','Primeira Classe','São Paulo - Brasil','Paris - França','2022-08-01','2022-08-10');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','36PC','Primeira Classe','São Paulo - Brasil','Amsterdã - Holanda','2022-09-20','2022-09-27');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','14PC','Primeira Classe','São Paulo - Brasil','Ottawa - Canadá','2022-06-10','2022-06-20');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','São Paulo - Brasil','Dubai - Emirados Arábes Unidos','2022-10-18','2022-10-28');
+INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno) VALUES('1','42PC','Primeira Classe','São Paulo - Brasil','Tokyo - Japão','2022-11-15','2022-11-25');
 
 /* RESERVA HOTEL */
-INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,data_checkin,data_checkout) VALUES('Vinicius Araujo de Oliveira','2001-05-14','Masculino','11900000000','00000000000','Nova York - EUA','217B','2022-06-17','2022-06-27');
-INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,data_checkin,data_checkout) VALUES('Beatriz da Cruz Guedes','2000-10-25','Feminino','11958000000','2221106117','Amsterdã - Holanda','118A','2022-06-10','2022-06-20');
-INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,data_checkin,data_checkout) VALUES('Julia da Costa Santos','2001-06-23','Feminino','11900000023','2222102677','Paris - França','036B','2022-08-05','2022-08-10');
-INSERT INTO Reserva_Hotel(nome_completo,data_nascimento,sexo,telefone,documento,reserva,quarto,data_checkin,data_checkout) VALUES('Joana Darc Monteiro Silva','2002-07-05','Feminino','11900066000','2221107593','Roma - Itália','056A','2022-09-08','2022-09-27');
+INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Nova York - EUA','217B','2022-06-17','2022-06-27');
+INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Amsterdã - Holanda','118A','2022-06-10','2022-06-20');
+INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Paris - França','036B','2022-08-05','2022-08-10');
+INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Roma - Itália','056A','2022-09-08','2022-09-27');
 
 /* CONSULTA */
 SELECT * FROM Cliente;
 SELECT * FROM Passagens_Aereas;
 SELECT * FROM Dados_Passageiro;
 SELECT * FROM Reserva_Hotel;
-SELECT * FROM Cliente,Passagens_Aereas,Dados_Passageiro,Reserva_Hotel;
+SELECT * FROM Dados_Passageiro,Passagens_Aereas;
+SELECT * FROM Dados_Passageiro,Reserva_Hotel;
 
 /* ATUALIZAR */
 UPDATE Cliente SET nome_completo='??????';
