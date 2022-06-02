@@ -131,7 +131,7 @@ INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_par
 INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Nova York - EUA','217B','2022-06-17','2022-06-27');
 INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Amsterdã - Holanda','118A','2022-06-10','2022-06-20');
 INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Paris - França','036B','2022-08-05','2022-08-10');
-INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Roma - Itália','056A','2022-09-08','2022-09-27');
+INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout) VALUES('Tokyo - Japão','056A','2022-09-08','2022-09-27');
 
 /* CONSULTA */
 SELECT * FROM Cliente;
