@@ -61,7 +61,7 @@
           <%
           
           if(auth != null){%>
-        	  <li><a href="pagePagamento.jsp">carrinho</a></li>
+        	  <li><a href="Carrinho.jsp">carrinho</a></li>
         	  <li><a href="logout"> Logout</a></li>
           <%}else{%>
         	  <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
@@ -182,7 +182,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=1" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -209,7 +209,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=2" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -235,7 +235,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=3" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -261,7 +261,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=4" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -287,7 +287,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=5" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->
@@ -313,7 +313,7 @@
                 <!--overlayer---------->
                 <div class="overlay">
                   <!--buy-btn------>
-                  <a href="./pagePagamento.jsp" class="buy-btn">Compre já</a>
+                  <a href="AddCarrinho?id=6" class="buy-btn">Compre já</a>
                 </div>
               </div>
               <!--detail-box--------->

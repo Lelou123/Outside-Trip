@@ -8,14 +8,14 @@ public class Passagem {
 	
 	private String Passageiros;
 	private String Poltrona;
-	private AssentoClasse Classe;
+	private String Classe;
 	private String Reserva;
 	private String Origem;
 	private String Destino;
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem(Integer idPassagens, String passageiros, String poltrona, AssentoClasse classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+	public Passagem(Integer idPassagens, String passageiros, String poltrona, String classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
 		IdPassagens = idPassagens;
 		Passageiros = passageiros;
@@ -57,11 +57,11 @@ public class Passagem {
 		Poltrona = poltrona;
 	}
 
-	public AssentoClasse getClasse() {
+	public String getClasse() {
 		return Classe;
 	}
 
-	public void setClasse(AssentoClasse classe) {
+	public void setClasse(String classe) {
 		Classe = classe;
 	}
 
