@@ -58,6 +58,7 @@ if(car_List != null){
 					<th scope="col">Quarto</th>
 					<th scope="col">Checkin</th>
 					<th scope="col">Checkout</th>
+					<th scope="col">Preço</th>
 					<th scope="col">Compre agora</th>
 					<th scope="col">Cancelar</th>
 				</tr>
@@ -71,7 +72,8 @@ if(car_List != null){
 							<td><%=c.getReserva() %></td>
 							<td><%=c.getQuarto() %></td>
 							<td><%=c.getDataChekin() %></td>					
-							<td><%=c.getDataCheckout() %></td>					
+							<td><%=c.getDataCheckout() %></td>	
+							<td><%=c.getPreco() %></td>					
 							<td>
 								<form method="post" action="" class="form-inline">
 									<input type="hidden" name="id" value=<%=c.getId() %> class="form-input" />

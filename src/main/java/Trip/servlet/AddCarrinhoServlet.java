@@ -61,9 +61,7 @@ public class AddCarrinhoServlet extends HttpServlet {
 					response.sendRedirect("Index.jsp");
 				}
 			}
-			for (Carrinho c1 : car_List) {
-				out.println(c1.getId());
-			}
+			
 		}
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 	}

@@ -13,7 +13,21 @@ public class Hotel {
 	private String Quarto;
 	private Date DataChekin;
 	private Date DataCheckout;
+	private Double Preco;
 	//public List<Hotel> Hotel = AddHotels();
+	
+	
+
+	public Hotel(Integer id,  String reserva, String quarto, Date dataChekin, Date dataCheckout, Double preco) {
+		super();
+		Id = id;		
+		Reserva = reserva;
+		Quarto = quarto;
+		DataChekin = dataChekin;
+		DataCheckout = dataCheckout;
+		Preco = preco;
+	}
+	
 	
 	public Hotel(Integer id,  String reserva, String quarto, Date dataChekin, Date dataCheckout) {
 		super();
@@ -22,6 +36,7 @@ public class Hotel {
 		Quarto = quarto;
 		DataChekin = dataChekin;
 		DataCheckout = dataCheckout;
+		
 	}
 	
 	public Hotel() {}
@@ -73,14 +88,14 @@ public class Hotel {
 		DataCheckout = dataCheckout;
 	}
 
+	public Double getPreco() {
+		return Preco;
+	}
+
+	public void setPreco(Double preco) {
+		Preco = preco;
+	}
 	
-	public void Comprar(Hotel h)
-	{
 		
-	}
-	public void Cancelar(Hotel hotel)
-	{
-		
-	}
 	
 }

@@ -34,6 +34,7 @@ public class ProdutoDao {
 						r.setQuarto(result.getString("quarto"));
 						r.setDataChekin(result.getDate("data_checkin"));
 						r.setDataCheckout(result.getDate("data_checkout"));
+						r.setPreco(result.getDouble("preco"));
 						r.setQuantity(item.getQuantity());
 						produtos.add(r);
 					}

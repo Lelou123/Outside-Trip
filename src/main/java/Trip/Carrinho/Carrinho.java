@@ -7,8 +7,6 @@ public class Carrinho extends Hotel{
 	
 	private int Quantity;
 	
-	
-
 	public Carrinho() {}
 	
 	Produto pr = new Produto();
