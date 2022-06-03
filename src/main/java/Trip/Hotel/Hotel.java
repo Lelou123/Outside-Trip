@@ -1,74 +1,47 @@
 package Trip.Hotel;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Hotel {
 	
 
-	private String NomeCompleto;
-	private Date DataNascimento;
-	private String Sexo;
-	private String Telefone;
-	private String Documento;
+	public Integer Id;
+	
 	private String Reserva;
 	private String Quarto;
 	private Date DataChekin;
 	private Date DataCheckout;
+	//public List<Hotel> Hotel = AddHotels();
 	
-	
-	public Hotel(String nomeCompleto, Date dataNascimento, String sexo, String telefone, String documento, String reserva, String quarto, Date dataChekin, Date dataCheckout) {
+	public Hotel(Integer id,  String reserva, String quarto, Date dataChekin, Date dataCheckout) {
 		super();
-		NomeCompleto = nomeCompleto;
-		DataNascimento = dataNascimento;
-		Sexo = sexo;
-		Telefone = telefone;
-		Documento = documento;
+		Id = id;		
 		Reserva = reserva;
 		Quarto = quarto;
 		DataChekin = dataChekin;
 		DataCheckout = dataCheckout;
 	}
 	
+	public Hotel() {}
 	
-
-	public String getNomeCompleto() {
-		return NomeCompleto;
+	/*
+	 * public List<Hotel> AddHotels() { Hotel.add(new Hotel(
+	 * 1,"NovaYork-EUA","217B",new Date(), new Date())); Hotel.add(new Hotel(
+	 * 2,"Amsterdã - Holanda","118A",new Date(), new Date())); Hotel.add(new Hotel(
+	 * 1,"Paris - França","036B",new Date(), new Date())); Hotel.add(new Hotel(
+	 * 1,"Tokyo - Japão","056A",new Date(), new Date()));
+	 * 
+	 * return Hotel; }
+	 */
+	
+	public Integer getId() {
+		return Id;
 	}
 
-	public void setNomeCompleto(String nomeCompleto) {
-		NomeCompleto = nomeCompleto;
-	}
-
-	public Date getDataNascimento() {
-		return DataNascimento;
-	}
-
-	public void setDataNascimento(Date dataNascimento) {
-		DataNascimento = dataNascimento;
-	}
-
-	public String getSexo() {
-		return Sexo;
-	}
-
-	public void setSexo(String sexo) {
-		Sexo = sexo;
-	}
-
-	public String getTelefone() {
-		return Telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		Telefone = telefone;
-	}
-
-	public String getDocumento() {
-		return Documento;
-	}
-
-	public void setDocumento(String documento) {
-		Documento = documento;
+	public void setId(Integer id) {
+		Id = id;
 	}
 
 	public String getReserva() {

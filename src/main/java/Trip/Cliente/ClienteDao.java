@@ -56,7 +56,7 @@ public class ClienteDao {
 				cliente.setEmail("email");
 			}
 			
-			conexao.close();
+			
 		} catch (Exception e) {
 
 			e.printStackTrace();

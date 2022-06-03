@@ -8,13 +8,22 @@ public class Passagem {
 	
 	private String Passageiros;
 	private String Poltrona;
+<<<<<<< HEAD
 	private AssentoClasse Classe;
+=======
+	private String Classe;
+	private String Reserva;
+>>>>>>> 3f20e6038e3f17210bb2c5391c2bcc7a76af80dc
 	private String Origem;
 	private String Destino;
 	private Date DataPartida;
 	private Date DataRetorno;
 	
+<<<<<<< HEAD
 	public Passagem(Integer idPassagens, String passageiros, String poltrona, AssentoClasse classe, String origem, String destino, Date dataPartida, Date dataRetorno) {
+=======
+	public Passagem(Integer idPassagens, String passageiros, String poltrona, String classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+>>>>>>> 3f20e6038e3f17210bb2c5391c2bcc7a76af80dc
 		super();
 		IdPassagens = idPassagens;
 		Passageiros = passageiros;
@@ -55,11 +64,11 @@ public class Passagem {
 		Poltrona = poltrona;
 	}
 
-	public AssentoClasse getClasse() {
+	public String getClasse() {
 		return Classe;
 	}
 
-	public void setClasse(AssentoClasse classe) {
+	public void setClasse(String classe) {
 		Classe = classe;
 	}
 	

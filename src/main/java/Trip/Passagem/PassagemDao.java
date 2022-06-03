@@ -33,7 +33,7 @@ public class PassagemDao {
 
 			preparador.execute();
 			System.out.println("Passagem Reservada com Sucesso");
-			conexao.close();
+			
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -51,12 +51,16 @@ public class PassagemDao {
 			while(result.next()) {
 				Passagem row = new Passagem();
 				row.setIdPassagens(result.getInt("idPassagens"));
-				row.setIdPassagens(result.getInt("idPassagens"));
-				row.setIdPassagens(result.getInt("idPassagens"));
-				row.setIdPassagens(result.getInt("idPassagens"));
-				row.setIdPassagens(result.getInt("idPassagens"));
+				row.setPassageiros(result.getString("passageiros"));
+				row.setPoltrona(result.getString("poltrona"));
+				row.setClasse(result.getString("classe"));
+				row.setReserva(result.getString("reserva"));
+				row.setOrigem(result.getString("destino"));
+				row.setDestino(result.getString("origem"));
+				row.setDataPartida(result.getDate("data_partida"));
+				row.setDataRetorno(result.getDate("data_retorno"));
 			}
-			conexao.close();
+			
 		} catch (Exception e) {
 			
 		}
