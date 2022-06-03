@@ -9,19 +9,17 @@ public class Passagem {
 	private String Passageiros;
 	private String Poltrona;
 	private AssentoClasse Classe;
-	private String Reserva;
 	private String Origem;
 	private String Destino;
 	private Date DataPartida;
 	private Date DataRetorno;
 	
-	public Passagem(Integer idPassagens, String passageiros, String poltrona, AssentoClasse classe, String reserva, String origem, String destino, Date dataPartida, Date dataRetorno) {
+	public Passagem(Integer idPassagens, String passageiros, String poltrona, AssentoClasse classe, String origem, String destino, Date dataPartida, Date dataRetorno) {
 		super();
 		IdPassagens = idPassagens;
 		Passageiros = passageiros;
 		Poltrona = poltrona;
 		Classe = classe;
-		Reserva = reserva;
 		Origem = origem;
 		Destino = destino;
 		DataPartida = dataPartida;
@@ -63,13 +61,6 @@ public class Passagem {
 
 	public void setClasse(AssentoClasse classe) {
 		Classe = classe;
-	}
-
-	public String getReserva() {
-		return Reserva;
-	}
-	public void setReserva(String reserva) {
-		Reserva = reserva;
 	}
 	
 	public String getOrigem() {

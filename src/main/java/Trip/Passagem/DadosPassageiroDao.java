@@ -15,15 +15,14 @@ public class DadosPassageiroDao {
 		
 		Connection conexao = Conexao.conexao();
 		
-		String sql = "INSERT INTO Dados_Passageiro(nome_completo,sexo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES(?,?,?,?,?,?,?,?,?)";
+		String sql = "INSERT INTO Dados_Passageiro(nome_completo,data_nascimento,documento,telefone,Reserva_Hotel_id,Passagens_aereas_idPassagens,Cliente_idCliente) VALUES(?,?,?,?,?,?,?,?)";
 		
 		try {
 			PreparedStatement preparador = conexao.prepareStatement(sql);
 			preparador.setString(1, dadosPassageiro.getNomeCompleto());
-			preparador.setString(2, dadosPassageiro.getSexo());
-			preparador.setDate(3, new Date(dadosPassageiro.getDataNascimento().getTime()));
-			preparador.setString(4, dadosPassageiro.getDocumento());
-			preparador.setString(5, dadosPassageiro.getTelefone());
+			preparador.setDate(2, new Date(dadosPassageiro.getDataNascimento().getTime()));
+			preparador.setString(3, dadosPassageiro.getDocumento());
+			preparador.setString(4, dadosPassageiro.getTelefone());
 			
 		
 
