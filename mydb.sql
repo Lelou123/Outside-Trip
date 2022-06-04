@@ -129,20 +129,6 @@ INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_par
 INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','429CE','Classe Econômica','São Paulo - Brasil','Dubai - Emirados Arábes Unidos','2022-10-18','2022-10-28','4800.48');
 INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','425CE','Classe Econômica','São Paulo - Brasil','Tokyo - Japão','2022-11-15','2022-11-25','5500.70');
 
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','42PC','Primeira Classe','São Paulo - Brasil','Nova York - EUA','2022-07-17','2022-07-27','2900.67');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','21PC','Primeira Classe','São Paulo - Brasil','Paris - França','2022-08-01','2022-08-10','3300.11');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','36PC','Primeira Classe','São Paulo - Brasil','Amsterdã - Holanda','2022-09-20','2022-09-27','3100.60');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','14PC','Primeira Classe','São Paulo - Brasil','Ottawa - Canadá','2022-06-10','2022-06-20','5100.11');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','42PC','Primeira Classe','São Paulo - Brasil','Dubai - Emirados Arábes Unidos','2022-10-18','2022-10-28','4800.48');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','22PC','Primeira Classe','São Paulo - Brasil','Tokyo - Japão','2022-11-15','2022-11-25','5500.70');
-
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','109CEX','Classe Executiva','São Paulo - Brasil','Nova York - EUA','2022-07-17','2022-07-27','2900.67');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','196CEX','Classe Executiva','São Paulo - Brasil','Paris - França','2022-08-01','2022-08-10','3300.11');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','100CEX','Classe Executiva','São Paulo - Brasil','Amsterdã - Holanda','2022-09-20','2022-09-27','3100.60');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','136CEX','Classe Executiva','São Paulo - Brasil','Ottawa - Canadá','2022-06-10','2022-06-20','5100.11');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','128CEX','Classe Executiva','São Paulo - Brasil','Dubai - Emirados Arábes Unidos','2022-10-18','2022-10-28','4800.48');
-INSERT INTO Passagens_Aereas(passageiros,poltrona,classe,origem,destino,data_partida,data_retorno,preco) VALUES('1','115CEX','Classe Executiva','São Paulo - Brasil','Tokyo - Japão','2022-11-15','2022-11-25','5500.70');
-
 /* RESERVA HOTEL */
 INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout,preco) VALUES('Nova York - EUA','217B','2022-06-17','2022-06-27','2920.00');
 INSERT INTO Reserva_Hotel(reserva,quarto,data_checkin,data_checkout,preco) VALUES('Amsterdã - Holanda','118A','2022-07-10','2022-07-20','2800.00');
