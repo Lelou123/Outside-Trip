@@ -34,7 +34,7 @@ public class ProdutoDao {
 						r.setQuarto(result.getString("quarto"));
 						r.setDataChekin(result.getDate("data_checkin"));
 						r.setDataCheckout(result.getDate("data_checkout"));
-						r.setPreco(result.getDouble("preco"));
+						r.setPreco(result.getDouble("preco") * item.getQuantity());
 						r.setQuantity(item.getQuantity());
 						produtos.add(r);
 					}
@@ -47,6 +47,31 @@ public class ProdutoDao {
 		}
 		
 		return produtos;
+	}
+	
+	public double getTotalCartPrice(ArrayList<Carrinho> cartList) {
+		double soma = 0;
+		
+		try {
+			Connection conexao = Conexao.conexao();
+			if(cartList.size() > 0) {
+				for(Carrinho item: cartList) {
+					query = "SELECT preco FROM reserva_hotel WHERE id=?";
+					PreparedStatement preparador = conexao.prepareStatement(query);
+					preparador.setInt(1, item.getId());					
+					result = preparador.executeQuery();
+					
+					while(result.next()) {
+						soma += result.getDouble("preco") * item.getQuantity();
+					}
+				}
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return Math.round(soma);
 	}
 	
 }	

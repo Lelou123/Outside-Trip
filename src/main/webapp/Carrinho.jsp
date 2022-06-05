@@ -1,36 +1,34 @@
 
 <!--<%@ page contentType="text/html; charset=UTF-8"%> -->
 
-<%@page import="Trip.Cliente.*"%>
-<%@page import="Trip.Carrinho.*"%>
-<%@page import="java.util.*"%>
-<%
-Cliente auth = (Cliente) request.getSession().getAttribute("auth");
-if (auth != null) {
-	request.setAttribute("auth", auth);
-}
-
-ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) session.getAttribute("cart-list");
-List<Carrinho> carrProd = null;
-if(car_List != null){
-	ProdutoDao pDao = new ProdutoDao();
-	carrProd = pDao.getCarrProd(car_List);
-	request.setAttribute("cart_list", car_List);
-}
-%>
+	<%@page import="Trip.Cliente.*"%>
+	<%@page import="Trip.Carrinho.*"%>
+	<%@page import="java.util.*"%>
+	<%
+		Cliente auth = (Cliente) request.getSession().getAttribute("auth");
+		if (auth != null) {
+			request.setAttribute("auth", auth);
+		}
+		
+		
+		ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) session.getAttribute("cart-list");
+		List<Carrinho> carrProd = null;
+		if(car_List != null){
+			ProdutoDao pDao = new ProdutoDao();
+			carrProd = pDao.getCarrProd(car_List);
+			double total = pDao.getTotalCartPrice(car_List); 
+			
+			request.setAttribute("cart_list", car_List);	
+			request.setAttribute("total", total);
+		}
+	
+	%>
 
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-	rel="stylesheet"
-	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-	crossorigin="anonymous">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"  crossorigin="anonymous" referrerpolicy="no-referrer" />
-	
+
 	<style type="text/css">
 		.table tbody td{
 			vertical-align: middle;
@@ -42,13 +40,25 @@ if(car_List != null){
 		}
 		
 	</style>
+	<link rel="stylesheet" href="./css/style.css" />
+	
+	<meta charset="UTF-8" />
+	<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous">
+	
 	
 <title>Carrinho</title>
 </head>
 <body>
+	<div>
+		<%@include file="includes/navbarCarrinho.jsp"%>	
+	</div>
 	<div class="container">
 		<div class="d-flex py-3">
-			<h3>Preço total: R$111</h3>
+			<h3>Preço total: R$  ${ (total>0)?total:0 }</h3>
 			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
 		</div>
 		<table class="table table-loght">
@@ -73,9 +83,9 @@ if(car_List != null){
 							<td><%=c.getQuarto() %></td>
 							<td><%=c.getDataChekin() %></td>					
 							<td><%=c.getDataCheckout() %></td>	
-							<td><%=c.getPreco() %></td>					
+							<td>R$ <%=c.getPreco() %></td>					
 							<td>
-								<form method="post" action="" class="form-inline">
+								<form method="post" action="OrderNow" class="form-inline">
 									<input type="hidden" name="id" value=<%=c.getId() %> class="form-input" />
 									<div class="form-group d-flex justify-content-between">
 										<a class="btn btn-sm btn-decre"><i class="fas fa-minus-square"></i></a>
@@ -84,9 +94,10 @@ if(car_List != null){
 											name="quantity" class="form-control" value="1" readonly /> 
 										<a class="btn btn-sm btn-incre"><i class="fas fa-plus-square"></i></a> 
 									</div>
+									<button type="submit" class="btn btn-primary">Comprar</button>
 								</form>
 							</td>
-							<td><a class="btn btn-sm btn-danger" href="#">Remover</a></td>
+							<td><a class="btn btn-sm btn-danger" href="removeCarrinho?id=<%=c.getId()%>">Remover</a></td>
 						</tr>
 						<%}
 					}

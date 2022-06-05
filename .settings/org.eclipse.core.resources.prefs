@@ -1,3 +1,5 @@
 eclipse.preferences.version=1
 encoding//src/main/webapp/Index.jsp=UTF-8
+encoding//src/main/webapp/includes/navbar.jsp=ISO-8859-1
+encoding//src/main/webapp/includes/navbarCarrinho.jsp=UTF-8
 encoding//src/main/webapp/sobreNos.jsp=UTF-8

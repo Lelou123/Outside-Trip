@@ -12,6 +12,11 @@ html {
 
 }
 
+.badge-danger{
+	color: red;
+	background-color: white;
+}
+
 a {
 	text-decoration: none;
 	color: #eee;

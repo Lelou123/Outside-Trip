@@ -208,6 +208,6 @@
 
   </div>
 </footer>
-<script src="./js/script.js"></script>
+<%@include file="includes/footer.jsp"%>
 
 </html>

@@ -84,10 +84,7 @@
 </body>
 
 <script>
-	function info(){
-		window.alert("Olhe no seu terminal!");
-	}
-	
+	<%@include file="includes/footer.jsp"%>	
 </script>
 
 </html>
