@@ -52,11 +52,16 @@ public class ClienteDao {
 			result = preparador.executeQuery();
 			if (result.next()) {
 				cliente = new Cliente();
-				cliente.setNomeCompleto("nome_completo");
-				cliente.setEmail("email");
+				cliente.setIdCliente(result.getInt("idCliente"));
+				cliente.setNomeCompleto(result.getString("nome_completo"));
+				cliente.setDataNascimento(result.getDate("data_nascimento"));
+				cliente.setEmail(result.getString("email"));
+				cliente.setTelefone(result.getString("telefone"));
+				cliente.setDocumento(result.getString("documento"));
+				cliente.setUsuario(result.getString("usuario"));
 			}
 			
-			
+			conexao.close();
 		} catch (Exception e) {
 
 			e.printStackTrace();

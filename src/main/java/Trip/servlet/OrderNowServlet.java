@@ -31,21 +31,13 @@ public class OrderNowServlet extends HttpServlet {
 				
 				String hotelId = request.getParameter("id");
 				
-				System.out.println(cl.getNomeCompleto());
-				System.out.println(cl.getDataNascimento());
-				System.out.println(cl.getDocumento());
-				System.out.println(cl.getTelefone());
-				System.out.println(Integer.parseInt(hotelId));			
-				System.out.println(cl.getIdCliente());
-				
-				
 				DadosPassageiro dP = new DadosPassageiro();
 				dP.setNomeCompleto(cl.getNomeCompleto());
 				dP.setDataNascimento(cl.getDataNascimento());
 				dP.setDocumento(cl.getDocumento());
 				dP.setTelefone(cl.getTelefone());
 				dP.setIdHotel(Integer.parseInt(hotelId));
-				dP.setIdPassagens(null);
+				dP.setIdPassagens(2);
 				dP.setIdCliente(cl.getIdCliente());
 				
 				
@@ -69,7 +61,7 @@ public class OrderNowServlet extends HttpServlet {
 				}
 				
 			}else {
-				response.sendRedirect("Index.jsp");
+				response.sendRedirect("Index.jsp#loginmodel");				
 			}
 			
 			

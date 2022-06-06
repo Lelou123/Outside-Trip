@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Trip.BancoDados.Conexao;
+import Trip.Passagem.Passagem;
+import Trip.Passagem.PassagemDao;
 
 public class ProdutoDao {
 	
@@ -73,5 +75,7 @@ public class ProdutoDao {
 		
 		return Math.round(soma);
 	}
+	
+	
 	
 }	

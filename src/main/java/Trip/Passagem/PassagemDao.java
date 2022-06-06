@@ -54,7 +54,7 @@ public class PassagemDao {
 				row.setPassageiros(result.getString("passageiros"));
 				row.setPoltrona(result.getString("poltrona"));
 				row.setClasse(result.getString("classe"));
-				row.setReserva(result.getString("reserva"));
+				
 				row.setOrigem(result.getString("destino"));
 				row.setDestino(result.getString("origem"));
 				row.setDataPartida(result.getDate("data_partida"));

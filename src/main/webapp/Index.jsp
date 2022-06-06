@@ -6,8 +6,10 @@
 	<%
 		Cliente auth = (Cliente) request.getSession().getAttribute("auth");
 		if (auth != null) {
+			
+			
 			request.setAttribute("auth", auth);
-			System.out.println(auth.getNomeCompleto());
+			
 		}
 		
 		
@@ -22,8 +24,9 @@
 <html lang="PT-BR">
 
 <head>
-<meta charset="UTF-8" />
-<%@include file="includes/head.jsp"%>
+	<meta charset="UTF-8" />
+	<%@include file="includes/head.jsp"%>
+
 </head>
 
 <body>

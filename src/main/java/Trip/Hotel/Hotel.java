@@ -10,7 +10,7 @@ public class Hotel {
 	public Integer Id;
 	
 	private String Reserva;
-	private String Quarto;
+	private String Local;
 	private Date DataChekin;
 	private Date DataCheckout;
 	private Double Preco;
@@ -18,22 +18,22 @@ public class Hotel {
 	
 	
 
-	public Hotel(Integer id,  String reserva, String quarto, Date dataChekin, Date dataCheckout, Double preco) {
+	public Hotel(Integer id,  String reserva, String local, Date dataChekin, Date dataCheckout, Double preco) {
 		super();
 		Id = id;		
 		Reserva = reserva;
-		Quarto = quarto;
+		Local = local;
 		DataChekin = dataChekin;
 		DataCheckout = dataCheckout;
 		Preco = preco;
 	}
 	
 	
-	public Hotel(Integer id,  String reserva, String quarto, Date dataChekin, Date dataCheckout) {
+	public Hotel(Integer id,  String reserva, String local, Date dataChekin, Date dataCheckout) {
 		super();
 		Id = id;		
 		Reserva = reserva;
-		Quarto = quarto;
+		Local = local;
 		DataChekin = dataChekin;
 		DataCheckout = dataCheckout;
 		
@@ -44,9 +44,9 @@ public class Hotel {
 	/*
 	 * public List<Hotel> AddHotels() { Hotel.add(new Hotel(
 	 * 1,"NovaYork-EUA","217B",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 2,"Amsterdã - Holanda","118A",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 1,"Paris - França","036B",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 1,"Tokyo - Japão","056A",new Date(), new Date()));
+	 * 2,"Amsterdï¿½ - Holanda","118A",new Date(), new Date())); Hotel.add(new Hotel(
+	 * 1,"Paris - Franï¿½a","036B",new Date(), new Date())); Hotel.add(new Hotel(
+	 * 1,"Tokyo - Japï¿½o","056A",new Date(), new Date()));
 	 * 
 	 * return Hotel; }
 	 */
@@ -66,10 +66,10 @@ public class Hotel {
 		Reserva = reserva;
 	}
 	public String getQuarto() {
-		return Quarto;
+		return Local;
 	}
-	public void setQuarto(String quarto) {
-		Quarto = quarto;
+	public void setQuarto(String local) {
+		Local = local;
 	}
 	
 	public Date getDataChekin() {

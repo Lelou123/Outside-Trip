@@ -40,7 +40,7 @@
 		}
 		
 	</style>
-	<link rel="stylesheet" href="./css/style.css" />
+	<link rel="stylesheet" href="./css/CarrinhoCss.css" />
 	
 	<meta charset="UTF-8" />
 	<link
@@ -59,7 +59,7 @@
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Preço total: R$  ${ (total>0)?total:0 }</h3>
-			<a class="mx-3 btn btn-primary" href="#">Check Out</a>
+			<a class="mx-3 btn btn-primary" href="CheckOut">Check Out</a>
 		</div>
 		<table class="table table-loght">
 			<thead>
@@ -68,7 +68,7 @@
 					<th scope="col">Quarto</th>
 					<th scope="col">Checkin</th>
 					<th scope="col">Checkout</th>
-					<th scope="col">Preço</th>
+					<th scope="col">Preço</th>					
 					<th scope="col">Compre agora</th>
 					<th scope="col">Cancelar</th>
 				</tr>
@@ -87,17 +87,17 @@
 							<td>
 								<form method="post" action="OrderNow" class="form-inline">
 									<input type="hidden" name="id" value=<%=c.getId() %> class="form-input" />
-									<div class="form-group d-flex justify-content-between">
-										<a class="btn btn-sm btn-decre"><i class="fas fa-minus-square"></i></a>
-										
-											<input type="text"
-											name="quantity" class="form-control" value="1" readonly /> 
-										<a class="btn btn-sm btn-incre"><i class="fas fa-plus-square"></i></a> 
+									<div class="form-group d-flex justify-content-between">																			
+										<input type="text" name="quantity" class="form-control" value="1" readonly /> 										 
+										<button type="submit" class="btn btn-primary">Comprar</button>
 									</div>
-									<button type="submit" class="btn btn-primary">Comprar</button>
+									
 								</form>
 							</td>
-							<td><a class="btn btn-sm btn-danger" href="removeCarrinho?id=<%=c.getId()%>">Remover</a></td>
+							
+							<td>
+								<a class="btn btn-sm btn-danger" href="removeCarrinho?id=<%=c.getId()%>">Remover</a>
+							</td>
 						</tr>
 						<%}
 					}

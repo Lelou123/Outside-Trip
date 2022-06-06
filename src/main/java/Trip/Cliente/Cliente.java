@@ -10,6 +10,9 @@ import Trip.Passagem.Passagem;
 public class Cliente {
 	
 	private Integer IdCliente;
+	
+
+
 	private String NomeCompleto;
 	private Date DataNascimento;
 	private String Email;
@@ -61,21 +64,22 @@ public class Cliente {
 		Senha = senha;
 	}
 	
-	public Integer getIdCliente() {
-		return IdCliente;
-	}
-	public Integer getId() {
-		return IdCliente;
-	}
-	public Cliente(Integer idCliente) {
-		IdCliente = idCliente;
-	}
+	
 	public Cliente() {
 		// TODO Auto-generated constructor stub
 	}
 
 
+	public Integer getIdCliente() {
+		return IdCliente;
+	}
 
+
+
+
+	public void setIdCliente(Integer idCliente) {
+		IdCliente = idCliente;
+	}
 
 	public String getNomeCompleto() {
 		return NomeCompleto;

@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Trip.Carrinho.Carrinho;
-import Trip.Hotel.Hotel;
+import Trip.Cliente.Cliente;
 
 @WebServlet("/AddCarrinho")
 public class AddCarrinhoServlet extends HttpServlet {
@@ -26,7 +26,9 @@ public class AddCarrinhoServlet extends HttpServlet {
 		try (PrintWriter out = response.getWriter()) {
 
 			ArrayList<Carrinho> carList = new ArrayList<>();
-
+			
+			
+			
 			int id = Integer.parseInt(request.getParameter("id"));
 
 			Carrinho c = new Carrinho();
@@ -52,10 +54,10 @@ public class AddCarrinhoServlet extends HttpServlet {
 					if (h.getId() == id) {
 						exist = true;
 						//out.print("product exist");
-						out.println("<h3 style='color:crimson; text-align:center'>Item já existe no carrinho <a href='Carrinho.jsp'>Ir ao carrinho</a></h3>");
+						out.println("<h3 style='color:crimson; text-align:center'>Item jï¿½ existe no carrinho <a href='Carrinho.jsp'>Ir ao carrinho</a></h3>");
 					}					
 				}
-				if (!exist) {
+				if (!exist && carList.size() <= 2) {
 					carList.add(c);
 					//out.print("Product added");
 					response.sendRedirect("Index.jsp");

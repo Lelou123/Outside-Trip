@@ -12,10 +12,7 @@ html {
 
 }
 
-.badge-danger{
-	color: red;
-	background-color: white;
-}
+
 
 a {
 	text-decoration: none;
@@ -643,7 +640,7 @@ a {
 
 .cardi {
 	position: relative;
-	width: 320px;
+	width: calc(80vw / 4);
 	height: 400px;
 	margin: 30px;
 	border-radius: 15px;
