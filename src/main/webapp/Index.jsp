@@ -35,9 +35,19 @@
 	<header>
 
 		<%@include file="includes/navbar.jsp"%>
+		
 
-
-
+				<%
+				if (auth != null) {
+				%>
+				<h2  class="Slogan">
+					bem vindo
+					<%=auth.getNomeCompleto()%>
+				</h2>
+				<%
+				}
+				%>
+				
 		<form>
 			<section class="Selecionar">
 				<div class="OD">
@@ -91,7 +101,7 @@
 
 				<h2 class="Slogan">Relaxe … Você está com a gente!</h2>
 				<h2 class="Slogan2">Nós simplificamos</h2>
-
+				
 
 
 			</section>
@@ -102,16 +112,7 @@
 
 	</header>
 
-	<%
-	if (auth != null) {
-	%>
-	<h2>
-		bem vindo
-		<%=auth.getUsuario()%>
-	</h2>
-	<%
-	}
-	%>
+	
 
 	<div class="passagens-splide">
 		<h2 class="chamadopsg" id="passagem">

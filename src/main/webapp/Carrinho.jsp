@@ -78,9 +78,9 @@
 					<%
 					if(car_List != null){
 						for(Carrinho c: carrProd){%>
-							<tr>
+							<tr>							
+							<td><%=c.getLocal() %></td>
 							<td><%=c.getReserva() %></td>
-							<td><%=c.getQuarto() %></td>
 							<td><%=c.getDataChekin() %></td>					
 							<td><%=c.getDataCheckout() %></td>	
 							<td>R$ <%=c.getPreco() %></td>					

@@ -55,7 +55,7 @@
 
                     <div class="input-box">
                         <label for="number">Data de nascimento</label>
-                        <input type="date" id="data" name="dataNasc">
+                        <input type="date" id="data" name="dataNasc"  required>
                     </div>
 
                     <div class="input-box">

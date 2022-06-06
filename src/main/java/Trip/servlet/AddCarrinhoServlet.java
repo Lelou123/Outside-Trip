@@ -25,9 +25,7 @@ public class AddCarrinhoServlet extends HttpServlet {
 
 		try (PrintWriter out = response.getWriter()) {
 
-			ArrayList<Carrinho> carList = new ArrayList<>();
-			
-			
+			ArrayList<Carrinho> carList = new ArrayList<>();					
 			
 			int id = Integer.parseInt(request.getParameter("id"));
 

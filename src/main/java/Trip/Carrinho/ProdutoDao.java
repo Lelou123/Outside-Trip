@@ -33,7 +33,7 @@ public class ProdutoDao {
 						Carrinho r = new Carrinho();
 						r.setId(result.getInt("id"));
 						r.setReserva(result.getString("reserva"));
-						r.setQuarto(result.getString("quarto"));
+						r.setLocal(result.getString("destino"));
 						r.setDataChekin(result.getDate("data_checkin"));
 						r.setDataCheckout(result.getDate("data_checkout"));
 						r.setPreco(result.getDouble("preco") * item.getQuantity());
