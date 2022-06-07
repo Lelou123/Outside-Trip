@@ -27,20 +27,34 @@ public class CheckOutServlet extends HttpServlet {
 			
 			Cliente cl = (Cliente) request.getSession().getAttribute("auth");
 			ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) request.getSession().getAttribute("cart-list");
-			
+			int pId;
 			if(cl != null && car_List != null) {
+				DadosPassageiro dP = new DadosPassageiro();
+				int hotelId;
+				for(Carrinho c1: car_List) {
+					if(c1.getId() < 10) {
+						hotelId = c1.getId();
+						dP.setNomeCompleto(cl.getNomeCompleto());
+						dP.setDataNascimento(cl.getDataNascimento());
+						dP.setDocumento(cl.getDocumento());
+						dP.setTelefone(cl.getTelefone());
+						
+						
+						dP.setIdCliente(cl.getIdCliente());
+						dP.setIdHotel(hotelId);
+						break;
+					}
+				}
+				
 				for(Carrinho c: car_List) {
+					pId = c.getId();
 					
-					DadosPassageiro dP = new DadosPassageiro();
-					dP.setNomeCompleto(cl.getNomeCompleto());
-					dP.setDataNascimento(cl.getDataNascimento());
-					dP.setDocumento(cl.getDocumento());
-					dP.setTelefone(cl.getTelefone());
-					dP.setIdHotel(c.getId());
-					dP.setIdPassagens(2);
-					dP.setIdCliente(cl.getIdCliente());
-					
-					
+					if(c.getId() > 10) {
+						pId = c.getId() - 10;
+						dP.setIdPassagens(pId);
+					}
+									
+					pId = 0;
 					DadosPassageiroDao dPDao = new DadosPassageiroDao();
 					
 					boolean result = dPDao.dadosPassageiro(dP);

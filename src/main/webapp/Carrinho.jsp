@@ -8,6 +8,8 @@
 		Cliente auth = (Cliente) request.getSession().getAttribute("auth");
 		if (auth != null) {
 			request.setAttribute("auth", auth);
+		}else{
+			response.sendRedirect("Index.jsp#loginmodel");
 		}
 		
 		
@@ -79,9 +81,15 @@
 					<%
 					if(car_List != null){
 						for(Carrinho c: carrProd){%>
-							<% if(c.getId() < 10){ %>
+							
 								<tr>							
-									<td><%=c.getReserva() %></td>
+									<% if(c.getLocal2() != null){ 	%>					
+										<td> Passagem --  <%=c.getReserva() %> </td>
+									<%}else{%>
+										<td>Hotel  --  <%=c.getReserva() %></td>
+									
+									<%}%>
+									
 									<td><%=c.getLocal() %></td>
 									<td><%=c.getLocal2() %></td>
 									
@@ -104,34 +112,8 @@
 									</td>
 								</tr>
 								
-							<%}else{%>
-								<tr>							
-							<td><%=c.getLocal() %></td>
-							<td><%=c.getLocal2() %></td>
-							<td><%=c.getReserva() %></td>
-							<td><%=c.getDataChekin() %></td>					
-							<td><%=c.getDataCheckout() %></td>	
-							<td>R$ <%=c.getPreco() %></td>		
-							<% System.out.print(c.getId()); %>			
-							<td>
-								<form method="post" action="OrderNow" class="form-inline">
-									<input type="hidden" name="id" value=<%=c.getId() %> class="form-input" />
-									<div class="form-group d-flex justify-content-between">																			
-										<input type="text" name="quantity" class="form-control" value="1" readonly /> 										 
-										<button type="submit" class="btn btn-primary">Comprar</button>
-									</div>
-									
-								</form>
-							</td>
-							
-							<td>
-								<a class="btn btn-sm btn-danger" href="removeCarrinho?id=<%=c.getId()%>">Remover</a>
-							</td>
-						</tr>
 							<%} %>
-						<%}
-					}
-					%>
+						<%}%>
 					
 			</tbody>
 		</table>

@@ -50,6 +50,7 @@ public class DadosPassageiroDao {
 		List<Carrinho> lista = new ArrayList<>();
 		Connection conexao = Conexao.conexao();
 		Carrinho c = new Carrinho();
+		Carrinho c1 = new Carrinho();
 		try {
 			
 			query = "SELECT * FROM dados_passageiro WHERE Cliente_idCliente=? ORDER BY dados_passageiro.iddados DESC";
@@ -63,9 +64,9 @@ public class DadosPassageiroDao {
 				
 				int hotelId = (result.getInt("Reserva_Hotel_id"));
 				int passagemId = (result.getInt("Passagens_aereas_idPassagens"));
-				
-				c= dpD.getSingleProduct(hotelId);
-				lista.add(c);
+				System.out.println(hotelId + " " + passagemId);
+				lista = dpD.getSingleProduct(hotelId, passagemId);
+								
 			}
 			
 		}catch (Exception e) {
@@ -77,13 +78,62 @@ public class DadosPassageiroDao {
 	
 	
 	
-	
-	public void cancelPedido(int id) {
+	public List<Carrinho> getSingleProduct(int idHotel, int idPassagem) {
+		List<Carrinho> list = new ArrayList<Carrinho>();
+		Carrinho row = new Carrinho();
+		Carrinho row1 = new Carrinho();
 		Connection conexao = Conexao.conexao();
 		try {
-			query = "DELETE FROM dados_passageiro WHERE Reserva_Hotel_id=?";
+			query= "SELECT * FROM reserva_hotel WHERE id=?";
 			preparador = conexao.prepareStatement(query);
-			preparador.setInt(1, id);
+			preparador.setInt(1, idHotel);
+			result = preparador.executeQuery();
+			while(result.next()) {
+				row.setId(result.getInt("id"));
+				row.setReserva(result.getString("reserva"));
+				row.setLocal(result.getString("destino"));
+				row.setDataChekin(result.getDate("data_checkin"));
+				row.setDataCheckout(result.getDate("data_checkout"));
+				row.setPreco(result.getDouble("preco"));
+				list.add(row);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		try {
+			query= "SELECT * FROM passagens_aereas WHERE idPassagens=?";
+			preparador = conexao.prepareStatement(query);
+			preparador.setInt(1, idPassagem);
+			result = preparador.executeQuery();
+			while(result.next()) {
+				row1.setId(result.getInt("idPassagens"));
+				row1.setReserva(result.getString("reserva"));
+				row1.setLocal(result.getString("origem"));
+				row1.setLocal2(result.getString("destino"));
+				row1.setDataChekin(result.getDate("data_partida"));
+				row1.setDataCheckout(result.getDate("data_retorno"));
+				row1.setPreco(result.getDouble("preco"));
+				list.add(row1);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	
+	
+	public void cancelPedido(int idCliente) {
+		Connection conexao = Conexao.conexao();
+		
+		try {
+			query = "DELETE FROM dados_passageiro WHERE Cliente_idCliente=?";
+			preparador = conexao.prepareStatement(query);
+			preparador.setInt(1, idCliente);
 			preparador.execute();
 			
 			
@@ -95,28 +145,7 @@ public class DadosPassageiroDao {
 	
 	
 	
-	public Carrinho getSingleProduct(int id) {
-		Carrinho row = new Carrinho();
-		Connection conexao = Conexao.conexao();
-		try {
-			query= "SELECT * FROM reserva_hotel WHERE id=?";
-			preparador = conexao.prepareStatement(query);
-			preparador.setInt(1, id);
-			result = preparador.executeQuery();
-			while(result.next()) {
-				row.setId(result.getInt("id"));
-				row.setReserva(result.getString("reserva"));
-				row.setLocal(result.getString("destino"));
-				row.setDataChekin(result.getDate("data_checkin"));
-				row.setDataCheckout(result.getDate("data_checkout"));
-				row.setPreco(result.getDouble("preco"));
-			}
-		}catch (Exception e) {
-			e.printStackTrace();
-		}
-		
-		return row;
-	}
+	
 	
 	
 	

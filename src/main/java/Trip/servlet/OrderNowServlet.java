@@ -29,15 +29,18 @@ public class OrderNowServlet extends HttpServlet {
 			
 			if(cl != null) {
 				
-				String hotelId = request.getParameter("id");
-				
+				String Id = request.getParameter("id");
+				int id1 = Integer.parseInt(Id);
+				if(id1 > 10) {
+					id1 = id1 - 10;
+				}
 				DadosPassageiro dP = new DadosPassageiro();
 				dP.setNomeCompleto(cl.getNomeCompleto());
 				dP.setDataNascimento(cl.getDataNascimento());
 				dP.setDocumento(cl.getDocumento());
 				dP.setTelefone(cl.getTelefone());
-				dP.setIdHotel(Integer.parseInt(hotelId));
-				dP.setIdPassagens(2);
+				dP.setIdHotel(id1);
+				dP.setIdPassagens(id1);
 				dP.setIdCliente(cl.getIdCliente());
 				
 				
@@ -49,7 +52,7 @@ public class OrderNowServlet extends HttpServlet {
 					ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) request.getSession().getAttribute("cart-list");
 					if(car_List != null) {
 						for(Carrinho c: car_List) {
-							if(c.getId() == Integer.parseInt(hotelId)) {
+							if(c.getId() == id1) {
 								car_List.remove(car_List.indexOf(c));
 								break;
 							}						

@@ -49,10 +49,13 @@
 		<table class="table table-loght">
 			<thead>
 				<tr>
+					
+					
 					<th scope="col">Nome Da reserva</th>
-					<th scope="col">Local</th>
-					<th scope="col">Checkin</th>
-					<th scope="col">Checkout</th>
+					<th scope="col">Origem</th>
+					<th scope="col">Destino</th>
+					<th scope="col">Partida</th>
+					<th scope="col">Retorno</th>
 					<th scope="col">Preço</th>					
 					
 					<th scope="col">Cancelar</th>
@@ -60,23 +63,37 @@
 			</thead>
 			<tbody>
 				
+					
+					
+					
 					<%
 					if(pedidos != null){
 						for(Carrinho c: pedidos){%>
-							<tr>
-							<td><%=c.getLocal() %></td>
-							<td><%=c.getReserva() %></td>
-							<td><%=c.getDataChekin() %></td>					
-							<td><%=c.getDataCheckout() %></td>	
-							<td>R$ <%=c.getPreco() %></td>				
-						
-							
-							<td>
-								<a class="btn btn-sm btn-danger" href="CancelPedido?id=<%=c.getId()%>">Cancelar</a>
-							</td>
-						</tr>
-						<%}
-					}
+							<% if(c.getId() < 10){ %>
+								<tr>
+									<% if(c.getLocal2() != null){ 	%>					
+										<td>Passagem --  <%=c.getReserva() %> </td>
+									<%}else{%>
+										<td>Hotel  --  <%=c.getReserva() %></td>
+									
+									<%}%>
+									
+									<td><%=c.getLocal() %></td>
+									<td><%=c.getLocal2() %></td>
+									
+									<td><%=c.getDataChekin() %></td>					
+									<td><%=c.getDataCheckout() %></td>	
+									<td>R$ <%=c.getPreco() %></td>					
+									
+									
+									<td>
+										<a class="btn btn-sm btn-danger" href="CancelPedido?id=<%=c.getId()%>">Cancelar</a>
+									</td>
+								</tr>
+								
+							<%}%>
+						<%}%>
+					<%}
 					%>
 					
 			</tbody>
