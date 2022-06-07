@@ -63,7 +63,7 @@ public class DadosPassageiroDao {
 				
 				int hotelId = (result.getInt("Reserva_Hotel_id"));
 				int passagemId = (result.getInt("Passagens_aereas_idPassagens"));
-				System.out.println("Hotel id é: " + hotelId);
+				
 				c= dpD.getSingleProduct(hotelId);
 				lista.add(c);
 			}
@@ -74,6 +74,8 @@ public class DadosPassageiroDao {
 		
 		return lista;
 	}
+	
+	
 	
 	
 	public void cancelPedido(int id) {
@@ -89,6 +91,7 @@ public class DadosPassageiroDao {
 			e.printStackTrace();
 		}
 	}
+	
 	
 	
 	

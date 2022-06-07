@@ -6,13 +6,9 @@
 	<%
 		Cliente auth = (Cliente) request.getSession().getAttribute("auth");
 		if (auth != null) {
-			
-			
-			request.setAttribute("auth", auth);
-			
+			request.setAttribute("auth", auth);			
 		}
-		
-		
+				
 		
 		ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) session.getAttribute("cart-list");
 		if (car_List != null) {
@@ -40,7 +36,7 @@
 				<%
 				if (auth != null) {
 				%>
-				<h2  class="Slogan">
+				<h2  class="Slogan2">
 					bem vindo
 					<%=auth.getNomeCompleto()%>
 				</h2>
@@ -135,7 +131,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=1" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=12" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->
@@ -161,7 +157,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=2" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=13" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->
@@ -187,7 +183,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=3" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=11" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->
@@ -212,7 +208,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=4" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=14" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->
@@ -237,7 +233,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=5" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=15" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->
@@ -262,7 +258,7 @@
 								<!--overlayer---------->
 								<div class="overlay">
 									<!--buy-btn------>
-									<a href="AddCarrinho?id=6" class="buy-btn">Compre já</a>
+									<a href="AddCarrinho?id=16" class="buy-btn">Compre já</a>
 								</div>
 							</div>
 							<!--detail-box--------->

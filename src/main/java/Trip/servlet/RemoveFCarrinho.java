@@ -24,12 +24,22 @@ public class RemoveFCarrinho extends HttpServlet {
 		response.setContentType("text/html;charset=UTF-8");
 		try(PrintWriter out = response.getWriter()){
 			String id = request.getParameter("id");
+			
+			int id2 = Integer.parseInt(id);
+			
 			if(id != null) {
 				ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) request.getSession().getAttribute("cart-list");
 				if(car_List != null) {
+					
 					for(Carrinho c: car_List) {
-						if(c.getId() == Integer.parseInt(id)) {
+						if( c.getLocal2() != null) {
+							id2 = id2 - 10;
+						}
+						
+						if(c.getId() == id2) {
+							
 							car_List.remove(car_List.indexOf(c));
+							
 							break;
 						}						
 					}

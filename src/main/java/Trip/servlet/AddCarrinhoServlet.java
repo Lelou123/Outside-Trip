@@ -55,9 +55,12 @@ public class AddCarrinhoServlet extends HttpServlet {
 						out.println("<h3 style='color:crimson; text-align:center'>Item j� existe no carrinho <a href='Carrinho.jsp'>Ir ao carrinho</a></h3>");
 					}					
 				}
-				if (!exist && carList.size() <= 2) {
+				if (!exist && carList.size() < 2) {
 					carList.add(c);
 					//out.print("Product added");
+					response.sendRedirect("Index.jsp");
+				}
+				else {
 					response.sendRedirect("Index.jsp");
 				}
 			}

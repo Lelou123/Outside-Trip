@@ -30,13 +30,18 @@
         <button class="aside-menu">â˜°</button>
         <ul>
             <li><a href="./sobreNos.jsp">Sobre Nós</a></li>
-            <li><a href="#cdLegal">Cards</a></li>
+            <% if(auth ==null) {%>
+            	<li><a href="#cdLegal">Cards</a></li>
+            <%}%>
+            
             <li><a href="#hotel">Hotels</a></li>
             <li><a href="#passagem">Passagens</a></li>
 
 
             <% if(auth !=null) {%>
                 <li><a href="Carrinho.jsp">Carrinho <span class="badge badge-danger"> ${ cart_list.size() } </span></a>
+                </li>
+                <li><a href="Pedidos.jsp">Pedidos </a>
                 </li>
                 <li><a href="logout"> Logout</a></li>
                 <%} else {%>

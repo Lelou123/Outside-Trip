@@ -15,6 +15,8 @@ public class ClienteDao {
 	private PreparedStatement preparador;
 	private ResultSet result;
 
+	
+	
 	public void cadastrar(Cliente cliente) {
 
 		Connection conexao = Conexao.conexao();
@@ -40,6 +42,8 @@ public class ClienteDao {
 		}
 	}
 
+	
+	
 	public Cliente clientelogin(String usuario, String senha) {
 		Cliente cliente = null;
 		String query = "SELECT * FROM Cliente WHERE usuario=? and senha=?";
@@ -69,4 +73,7 @@ public class ClienteDao {
 		}
 		return cliente;
 	}
+	
+	
+	
 }
