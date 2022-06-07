@@ -283,7 +283,7 @@
 	<!--HOTEIS-------->
 	<h2 class="text-hotel">Encontre a hospedagem perfeita com os
 		melhores preços</h2>
-	<div class="card-hotel">
+	<div class="card-hotel" id="hotel">
 
 		<!--CARD HOTEL 1-------->
 		<div class="caaaard">

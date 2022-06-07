@@ -8,11 +8,11 @@
     </div>
 
     <ul>
-        <li><a href="./sobreNos.jsp">Sobre Nos</a></li>
+        <li><a href="sobreNos.jsp">Sobre Nos</a></li>
         <li><a href="#cdLegal">Cards</a></li>
         <li><a href="#hotel">Hotel</a></li>
         <li><a href="#passagem">Passagens</a></li>
-        <li><a href="pagePagamento.jsp">carrinho</a></li>
+        <li><a href="Carrinho.jsp">carrinho</a></li>
         <li><a onclick="window.location.href ='Index.jsp#loginmodel'" class="login"> Login</a></li>
     </ul>
 
