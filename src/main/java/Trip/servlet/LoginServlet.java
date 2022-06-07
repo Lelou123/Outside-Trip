@@ -32,7 +32,10 @@ public class LoginServlet extends HttpServlet {
 				req.getSession().setAttribute("auth", cliente);
 				resp.sendRedirect("Index.jsp");				
 			} else {
-				out.print("Not loged");
+				out.println("<script type=\"text/javascript\">");  
+				out.println("alert('Login Falhou ');"); 
+				out.print("window.location.href = 'Index.jsp#loginmodel';");
+				out.println("</script>");
 			}
 
 		} catch (Exception e) {

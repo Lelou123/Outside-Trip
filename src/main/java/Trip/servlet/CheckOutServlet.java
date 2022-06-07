@@ -34,12 +34,11 @@ public class CheckOutServlet extends HttpServlet {
 				for(Carrinho c1: car_List) {
 					if(c1.getId() < 10) {
 						hotelId = c1.getId();
+						
 						dP.setNomeCompleto(cl.getNomeCompleto());
 						dP.setDataNascimento(cl.getDataNascimento());
 						dP.setDocumento(cl.getDocumento());
-						dP.setTelefone(cl.getTelefone());
-						
-						
+						dP.setTelefone(cl.getTelefone());											
 						dP.setIdCliente(cl.getIdCliente());
 						dP.setIdHotel(hotelId);
 						break;
@@ -47,17 +46,48 @@ public class CheckOutServlet extends HttpServlet {
 				}
 				
 				for(Carrinho c: car_List) {
-					pId = c.getId();
+					
+					
+					if(dP.getIdHotel() != null && c.getId() != null) {
+						pId = c.getId();
+						hotelId = dP.getIdHotel();
+						
+					}else {
+						car_List.clear();
+						
+						response.setContentType("text/html"); 
+						out.println("<script type=\"text/javascript\">");  
+						out.println("alert('Voce precisa ter uma passagem e uma reserva de quarto para concluir sua compra ');");  
+						out.println("</script>");												
+					}
 					
 					if(c.getId() > 10) {
 						pId = c.getId() - 10;
+						
 						dP.setIdPassagens(pId);
+						System.out.println(" Id passagem " + dP.getIdPassagens() + pId);
 					}
-									
+					
+					if(dP.getIdPassagens()== null) {
+						car_List.clear();
+						
+						response.setContentType("text/html"); 
+						out.println("<script type=\"text/javascript\">");  
+						out.println("alert('Voce precisa ter 1 passagem e 1 reserva de quarto para concluir sua compra mude seu carrinho por favor ');");  
+						out.print("window.location.href = 'Index.jsp';");
+						out.println("</script>");	
+						
+					}
+					
+					
+					System.out.println(" Id passagem " + dP.getIdPassagens());
+					
 					pId = 0;
+					
 					DadosPassageiroDao dPDao = new DadosPassageiroDao();
 					
 					boolean result = dPDao.dadosPassageiro(dP);
+					
 					if(!result) break;
 				}
 				car_List.clear();

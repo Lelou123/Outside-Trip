@@ -7,11 +7,6 @@ import java.util.List;
 import Trip.Hotel.Hotel;
 import Trip.Passagem.Passagem;
 
-public class Produto {
-	
-	
-	public Hotel hotel;
-	
-	public Passagem pass;
+public class Produto extends Hotel{
 	
 }

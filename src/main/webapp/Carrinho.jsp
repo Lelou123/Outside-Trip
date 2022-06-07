@@ -61,7 +61,7 @@
 	<div class="container">
 		<div class="d-flex py-3">
 			<h3>Preço total: R$  ${ (total>0)?total:0 }</h3>
-			<a class="mx-3 btn btn-primary" href="CheckOut">Check Out</a>
+			<a class="mx-3 btn btn-primary" href="CheckOut">Finalizar Compra</a>
 		</div>
 		<table class="table table-loght">
 			<thead>
@@ -96,16 +96,7 @@
 									<td><%=c.getDataChekin() %></td>					
 									<td><%=c.getDataCheckout() %></td>	
 									<td>R$ <%=c.getPreco() %></td>					
-									<td>
-										<form method="post" action="OrderNow" class="form-inline">
-											<input type="hidden" name="id" value=<%=c.getId() %> class="form-input" />
-											<div class="form-group d-flex justify-content-between">																			
-												<input type="text" name="quantity" class="form-control" value="1" readonly /> 										 
-												<button type="submit" class="btn btn-primary">Comprar</button>
-											</div>
-											
-										</form>
-									</td>
+									
 									
 									<td>
 										<a class="btn btn-sm btn-danger" href="removeCarrinho?id=<%=c.getId()%>">Remover</a>

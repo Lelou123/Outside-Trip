@@ -37,7 +37,10 @@ public class AddCarrinhoServlet extends HttpServlet {
 
 			HttpSession session = request.getSession();
 			ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) session.getAttribute("cart-list");
-
+			
+			
+			
+			
 			if (car_List == null) {
 				carList.add(c);
 				session.setAttribute("cart-list", carList);
@@ -51,21 +54,27 @@ public class AddCarrinhoServlet extends HttpServlet {
 
 					if (h.getId() == id) {
 						exist = true;
-						//out.print("product exist");
-						out.println("<h3 style='color:crimson; text-align:center'>Item j� existe no carrinho <a href='Carrinho.jsp'>Ir ao carrinho</a></h3>");
+						//out.print("product exist");						
+						out.println("<script type=\"text/javascript\">");  
+						out.println("alert('Item Já existe em seu carrinho ');");  
+						out.print("window.location.href = 'Carrinho.jsp';");
+						out.println("</script>");	
+						
+					
 					}					
 				}
+				
+				
+				
 				if (!exist && carList.size() < 2) {
 					carList.add(c);
 					//out.print("Product added");
 					response.sendRedirect("Index.jsp");
 				}
-				else {
-					response.sendRedirect("Index.jsp");
-				}
+				
 			}
 			
-		}
+		} 
 		// response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
