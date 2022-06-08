@@ -15,9 +15,6 @@ import Trip.Cliente.Cliente;
 import Trip.Passagem.DadosPassageiro;
 import Trip.Passagem.DadosPassageiroDao;
 
-/**
- * Servlet implementation class OrderNowServlet
- */
 @WebServlet("/OrderNow")
 public class OrderNowServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
