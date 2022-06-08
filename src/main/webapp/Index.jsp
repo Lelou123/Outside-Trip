@@ -36,7 +36,7 @@
 				<%
 				if (auth != null) {
 				%>
-				<h2  class="Slogan2">
+				<h2  class="LoginNome">
 					bem vindo
 					<%=auth.getNomeCompleto()%>
 				</h2>

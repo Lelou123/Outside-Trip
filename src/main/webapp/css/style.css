@@ -530,7 +530,7 @@ a {
 .popup .content {
 	display: flex;
 	justify-content: center;
-	overflow: auto;
+	overflow: hidden;
 }
 
 .bts-login {
@@ -1018,7 +1018,13 @@ footer div.social-media {
 	.Slogan2 {
 		font-size: 30px;
 	}
-
+	
+	.LoginNome{
+		font-size: 20px;
+		margin-left: 80px;
+  		color: #ffcaa6;
+	}
+	
 	.Selecionar {
 		margin: 10px;
 		padding: 0;

@@ -38,8 +38,7 @@ public class AddCarrinhoServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			ArrayList<Carrinho> car_List = (ArrayList<Carrinho>) session.getAttribute("cart-list");
 			
-			
-			
+					
 			
 			if (car_List == null) {
 				carList.add(c);
