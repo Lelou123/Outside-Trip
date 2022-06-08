@@ -58,6 +58,7 @@ public class CheckOutServlet extends HttpServlet {
 						response.setContentType("text/html"); 
 						out.println("<script type=\"text/javascript\">");  
 						out.println("alert('Voce precisa ter uma passagem e uma reserva de quarto para concluir sua compra ');");  
+						out.print("window.location.href = 'Index.jsp';");
 						out.println("</script>");												
 					}
 					

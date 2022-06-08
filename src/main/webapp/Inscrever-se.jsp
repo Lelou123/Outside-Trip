@@ -73,9 +73,9 @@
                         <label for="password">Senha</label>
                         <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
                     </div>
-
+					
 					<div class="continue-button">
-                    	<button class="type="submit" onclick="info()"><a>Continuar</a></button>
+                    	<button class="type="submit" onclick="info()"><a > Continuar</a></button>
                 	</div>
                 
             </form>
@@ -84,7 +84,9 @@
 </body>
 
 <script>
-	<%@include file="includes/footer.jsp"%>	
+	function info() {
+		window.alert("Olhe no seu terminal!");
+	}
 </script>
 
 </html>

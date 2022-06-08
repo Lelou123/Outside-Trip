@@ -1,6 +1,7 @@
 package Trip.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -20,19 +21,29 @@ public class CadastroServlet extends HttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String name = req.getParameter("name");
-		String email = req.getParameter("email");
-		String documento = req.getParameter("cpf");
-		Date dataNascimento = converterParaDate(req.getParameter("dataNasc")); 
-		String usuario = req.getParameter("usuario");
-		String telefone = req.getParameter("number");
-		String senha = req.getParameter("password");
-		 
-		Cliente cl = new Cliente(name,dataNascimento, email, telefone, documento,usuario, senha);
-		ClienteDao cDao = new ClienteDao();
-		cDao.cadastrar(cl);
-				
-		resp.sendRedirect("Index.jsp"); 
+		
+		
+		try (PrintWriter out = resp.getWriter()){
+			String name = req.getParameter("name");
+			String email = req.getParameter("email");
+			String documento = req.getParameter("cpf");
+			Date dataNascimento = converterParaDate(req.getParameter("dataNasc")); 
+			String usuario = req.getParameter("usuario");
+			String telefone = req.getParameter("number");
+			String senha = req.getParameter("password");
+			 
+			Cliente cl = new Cliente(name,dataNascimento, email, telefone, documento,usuario, senha);
+			ClienteDao cDao = new ClienteDao();
+			cDao.cadastrar(cl);
+					
+			out.println("<script type=\"text/javascript\">");  
+			out.println("alert('Olhe o seu terminal e digite suas credenciaias do banco de dados ');"); 
+			out.print("window.location.href = 'Index.jsp#loginmodel';");
+			out.println("</script>");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 	}
 	
