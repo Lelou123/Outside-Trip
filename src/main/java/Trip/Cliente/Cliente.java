@@ -2,10 +2,7 @@ package Trip.Cliente;
 
 import java.util.Date;
 
-import Trip.Bagagem.Bagagem;
 import Trip.Hotel.Hotel;
-import Trip.Pagamento.MetodoPagamento;
-import Trip.Passagem.Passagem;
 
 public class Cliente {
 	
@@ -21,17 +18,14 @@ public class Cliente {
 	private String Usuario;
 	private String Senha;
 	
-	private MetodoPagamento MetodoP;
-	private Bagagem Bagagem;
+	
 	private Hotel Hotel;
-	private Passagem Passagem;
 	
 	
 	
 	
 	public Cliente(Integer idCliente, String nomeCompleto, Date dataNascimento,  String email, String telefone, String documento, String usuario, String senha, 
-			  MetodoPagamento metodoP, Trip.Bagagem.Bagagem bagagem,
-			Trip.Hotel.Hotel hotel, Trip.Passagem.Passagem passagem) {
+			Trip.Hotel.Hotel hotel) {
 		super();
 		IdCliente = idCliente;
 		NomeCompleto = nomeCompleto;
@@ -41,10 +35,8 @@ public class Cliente {
 		Documento = documento;
 		Usuario = usuario;
 		Senha = senha;
-		MetodoP = metodoP;
-		Bagagem = bagagem;
 		Hotel = hotel;
-		Passagem = passagem;	
+
 	}
 	
 	
@@ -123,30 +115,14 @@ public class Cliente {
 	public void setTelefone(String telefone) {
 		Telefone = telefone;
 	}
-	public MetodoPagamento getMetodoP() {
-		return MetodoP;
-	}
-	public void setMetodoP(MetodoPagamento metodoP) {
-		MetodoP = metodoP;
-	}
-	public Bagagem getBagagem() {
-		return Bagagem;
-	}
-	public void setBagagem(Bagagem bagagem) {
-		Bagagem = bagagem;
-	}
+	
 	public Hotel getHotel() {
 		return Hotel;
 	}
 	public void setHotel(Hotel hotel) {
 		Hotel = hotel;
 	}
-	public Passagem getPassagem() {
-		return Passagem;
-	}
-	public void setPassagem(Passagem passagem) {
-		Passagem = passagem;
-	}
+	
 	
 	
 	public void CadastrarCliente(Cliente cliente)
