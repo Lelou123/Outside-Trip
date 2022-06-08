@@ -143,13 +143,5 @@ public class DadosPassageiroDao {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
 }
 
