@@ -8,7 +8,6 @@ import java.util.List;
 
 import Trip.BancoDados.Conexao;
 
-import Trip.Passagem.PassagemDao;
 
 public class ProdutoDao {
 

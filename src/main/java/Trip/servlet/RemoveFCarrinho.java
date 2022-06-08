@@ -12,9 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import Trip.Carrinho.Carrinho;
 
-/**
- * Servlet implementation class RemoveFCarrinho
- */
 @WebServlet("/removeCarrinho")
 public class RemoveFCarrinho extends HttpServlet {
 	private static final long serialVersionUID = 1L;

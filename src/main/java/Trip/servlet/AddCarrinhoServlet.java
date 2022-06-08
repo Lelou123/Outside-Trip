@@ -43,7 +43,7 @@ public class AddCarrinhoServlet extends HttpServlet {
 			if (car_List == null) {
 				carList.add(c);
 				session.setAttribute("cart-list", carList);
-				//out.print("Session Created and added the list");
+				
 				response.sendRedirect("Index.jsp");
 			} else {
 				carList = car_List;
@@ -53,7 +53,7 @@ public class AddCarrinhoServlet extends HttpServlet {
 
 					if (h.getId() == id) {
 						exist = true;
-						//out.print("product exist");						
+												
 						out.println("<script type=\"text/javascript\">");  
 						out.println("alert('Item Já existe em seu carrinho ');");  
 						out.print("window.location.href = 'Carrinho.jsp';");
@@ -67,14 +67,14 @@ public class AddCarrinhoServlet extends HttpServlet {
 				
 				if (!exist && carList.size() < 2) {
 					carList.add(c);
-					//out.print("Product added");
+					
 					response.sendRedirect("Index.jsp");
 				}
 				
 			}
 			
 		} 
-		// response.getWriter().append("Served at: ").append(request.getContextPath());
+	
 	}
 
 }

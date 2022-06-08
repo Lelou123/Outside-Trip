@@ -18,7 +18,7 @@ public class DadosPassageiro {
 		
 	}
 
-	//Pedidos do usuario logado
+	
 
 	public DadosPassageiro(Integer idDados, String nomeCompleto, Date dataNascimento, String documento, String telefone,
 			Integer idHotel, Integer idPassagens, Integer idCliente) {		

@@ -41,7 +41,6 @@ public class CadastroServlet extends HttpServlet {
 			out.print("window.location.href = 'Index.jsp#loginmodel';");
 			out.println("</script>");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -44,16 +44,6 @@ public class Hotel {
 	
 	public Hotel() {}
 	
-	/*
-	 * public List<Hotel> AddHotels() { Hotel.add(new Hotel(
-	 * 1,"NovaYork-EUA","217B",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 2,"Amsterd� - Holanda","118A",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 1,"Paris - Fran�a","036B",new Date(), new Date())); Hotel.add(new Hotel(
-	 * 1,"Tokyo - Jap�o","056A",new Date(), new Date()));
-	 * 
-	 * return Hotel; }
-	 */
-	
 	
 	
 	public Integer getId() {

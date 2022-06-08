@@ -20,7 +20,6 @@ public class LogoutServlet extends HttpServlet {
 				resp.sendRedirect("Index.jsp");
 			}
 		}catch (Exception e) {
-			// TODO: handle exception
 		}
 
 	}

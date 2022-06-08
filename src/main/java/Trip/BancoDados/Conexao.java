@@ -28,7 +28,7 @@ public class Conexao {
 
 			Class.forName("com.mysql.jdbc.Driver");
 			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb", usuario, senha);
-			System.out.println("Conexï¿½o com o Banco de Dados feita com Sucesso");
+			System.out.println("Conexão com o Banco de Dados feita com Sucesso");
 
 		} catch (SQLException | ClassNotFoundException e) {
 			System.err.println("Erro ao tentar Conectar com o Banco de Dados");
