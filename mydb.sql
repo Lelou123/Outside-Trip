@@ -138,24 +138,6 @@ SELECT * FROM Cliente;
 SELECT * FROM Passagens_Aereas;
 SELECT * FROM Dados_Passageiro;
 SELECT * FROM Reserva_Hotel;
-SELECT * FROM Dados_Passageiro,Passagens_Aereas;
-SELECT * FROM Dados_Passageiro,Reserva_Hotel;
-
-/* ATUALIZAR */
-UPDATE Cliente SET nome_completo='????????';
-UPDATE Passagens_Aereas SET destino='?????';
-UPDATE Dados_Passageiro SET documento='??????';
-UPDATE Reserva_Hotel SET data_checkin='?????';
-
-/* DELETAR */
-DELETE FROM Cliente WHERE nome_completo='??????';
-DELETE FROM Passagens_Aereas WHERE idPassagens='?????';
-DELETE FROM Dados_Passageiro WHERE nome_completo='?????';
-DELETE FROM Reserva_Hotel WHERE documento='?????';
-
-/* DEFAULT - VALORES PADRÃO*/
-ALTER TABLE Passagens_Aereas
-MODIFY COLUMN destino VARCHAR(45) NOT NULL;
 
 
 SET SQL_MODE=@OLD_SQL_MODE;

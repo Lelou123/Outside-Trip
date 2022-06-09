@@ -2,7 +2,7 @@ package Trip.Carrinho;
 
 import Trip.Hotel.Hotel;
 
-public class Carrinho extends Hotel{
+public class Carrinho extends Produto{
 	
 	
 	private int Quantity;

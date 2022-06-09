@@ -40,6 +40,13 @@
 			box-shadow: none;
 			font-size: 25px;		
 		}
+		.btn-primary{
+		
+			background-color: #ffcaa6;
+		}
+		
+		
+		
 		
 	</style>
 	<link rel="stylesheet" href="./css/CarrinhoCss.css" />
