@@ -13,7 +13,6 @@ html {
 }
 
 
-
 a {
 	text-decoration: none;
 	color: #eee;
@@ -230,7 +229,12 @@ select {
 	background-color: var(--clr-neon);
 }
 
-
+.LoginNome{
+		font-size: 20px;
+		margin-left: 80px;
+  		color: #ffcaa6;
+	}
+	
 
 .Slogan {
 
@@ -887,6 +891,10 @@ footer div.social-media {
 	select {
 		width: 47%;
 	}
+	
+	.cardi{
+			width: unset;
+		}
 
 	.OD {
 		display: unset;
@@ -1019,11 +1027,6 @@ footer div.social-media {
 		font-size: 30px;
 	}
 	
-	.LoginNome{
-		font-size: 20px;
-		margin-left: 80px;
-  		color: #ffcaa6;
-	}
 	
 	.Selecionar {
 		margin: 10px;
@@ -1143,4 +1146,7 @@ footer div.social-media {
 		}
 
 	}
+	
+	
+	
 }

@@ -4,7 +4,7 @@
             <a href="Index.jsp">Out<span>s</span>ide trip
             </a>
         </h1>
-        <button class="fechar-menu">✕</button>
+        <button class="fechar-menu">X</button>
     </div>
 
     <ul>
@@ -27,9 +27,9 @@
             <a href="Index.jsp">Out<span>s</span>ide trip
             </a>
         </h1>
-        <button class="aside-menu">☰</button>
+        <button class="aside-menu">=</button>
         <ul>
-            <li><a href="./sobreNos.jsp">Sobre N�s</a></li>
+            <li><a href="./sobreNos.jsp">Sobre Nós</a></li>
             <% if(auth ==null) {%>
             	<li><a href="#cdLegal">Cards</a></li>
             <%}%>
